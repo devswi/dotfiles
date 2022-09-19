@@ -1,0 +1,37 @@
+{
+  "contributes": {
+    "snippets": [
+      {
+        "language": "json",
+        "path": "./json.json"
+      },
+      {
+        "language": "lua",
+        "path": "./lua.json"
+      },
+      {
+        "language": [
+          "typescriptreact"
+        ],
+        "path": "./web/typescriptreact.json"
+      },
+      {
+        "language": [
+          "javascriptreact"
+        ],
+        "path": "./web/javascriptreact.json"
+      },
+      {
+        "language": [
+          "typescriptreact",
+          "javascriptreact"
+        ],
+        "path": "./web/react.json"
+      }
+    ]
+  },
+  "engines": {
+    "vscode": "^1.11.0"
+  },
+  "name": "nvim-snippets"
+}

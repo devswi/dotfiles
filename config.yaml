@@ -1,0 +1,51 @@
+config:
+  backup: false
+  banner: true
+  create: true
+  dotpath: dotfiles
+  keepdot: false
+  link_dotfile_default: nolink
+  link_on_import: nolink
+  longkey: false
+  impignore:
+  - .local-history
+  - '*/cache'
+  - .DS_Store
+  - '**/*/.DS_Store'
+  - tmp
+  - compiled.*
+  cmpignore:
+  - tmp
+  - '*/cache'
+  instignore:
+  - .DS_Store
+  - '**/*/.DS_Store'
+  - '*/cache'
+dotfiles:
+  f_zshrc:
+    src: zshrc
+    dst: ~/.zshrc
+  d_kitty:
+    src: config/kitty
+    dst: ~/.config/kitty
+  d_nvim:
+    src: config/nvim
+    dst: ~/.config/nvim
+    upignore:
+    - .local-history
+    - .DS_Store
+    - lua/compiled.lua
+    cmpignore:
+    - .local-history
+    - .DS_Store
+    - lua/compiled.lua
+  f_tmux.conf:
+    src: tmux.conf
+    dst: ~/.tmux.conf
+profiles:
+  shiwei-mbp:
+    dotfiles:
+    - f_zshrc
+    - d_kitty
+    - d_nvim
+    - f_tmux.conf

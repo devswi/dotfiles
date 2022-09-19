@@ -1,0 +1,53 @@
+{
+  "Modal Component": {
+    "body": [
+      "import styled from 'styled-components';",
+      "import ReactDOM from 'react-dom';",
+      "",
+      "const Container = styled.div`",
+      "    position: fixed;",
+      "    left: 0;",
+      "    right: 0;",
+      "    top: 0;",
+      "    bottom: 0;",
+      "    z-index: $2;",
+      "`;",
+      "",
+      "const $1 = () => {",
+      "    return ReactDOM.createPortal(",
+      "        <Container>",
+      "            <div />",
+      "        </Container>,",
+      "        document.querySelector('body')!,",
+      "    );",
+      "};",
+      "",
+      "export default $1;"
+    ],
+    "description": "react component",
+    "prefix": "modal"
+  },
+  "Pure react component": {
+    "body": [
+      "import styled from 'styled-components';",
+      "",
+      "interface Props {",
+      "    className?: string;",
+      "}",
+      "",
+      "const Container = styled.div``;",
+      "",
+      "const $1 = ({ className = '' }: Props) => {",
+      "    return (",
+      "        <Container className={className}>",
+      "            <div />",
+      "        </Container>",
+      "    );",
+      "};",
+      "",
+      "export default $1;"
+    ],
+    "description": "react component",
+    "prefix": "component"
+  }
+}
