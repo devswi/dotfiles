@@ -9,7 +9,7 @@ config:
   longkey: false
   impignore:
   - .local-history
-  - '*/cache'
+  - cache
   - .DS_Store
   - '**/*/.DS_Store'
   - tmp
@@ -21,6 +21,14 @@ config:
   - .DS_Store
   - '**/*/.DS_Store'
   - '*/cache'
+variables:
+  keyid: 9D41FF247926E119
+trans_read:
+  gpg: gpg -q --for-your-eyes-only --no-tty -d {0} > {1}
+  gpgdir: mkdir {1} && gpg -q --for-your-eyes-only --no-tty -d {0} |tar -x -C {1}
+trans_write:
+  gpg: gpg -qaer {{@@ keyid @@}} -o- {0} > {1}
+  gpgdir: tar -c -C {0} . | gpg -qaer {{@@ keyid @@}} -o {1}
 dotfiles:
   f_zshrc:
     src: zshrc
@@ -42,6 +50,12 @@ dotfiles:
   f_tmux.conf:
     src: tmux.conf
     dst: ~/.tmux.conf
+  d_ssh:
+    src: ssh
+    dst: ~/.ssh
+    chmod: '700'
+    trans_read: gpgdir
+    trans_write: gpgdir
 profiles:
   shiwei-mbp:
     dotfiles:
@@ -49,3 +63,4 @@ profiles:
     - d_kitty
     - d_nvim
     - f_tmux.conf
+    - d_ssh
