@@ -12,6 +12,7 @@ config:
   create: true
   dotpath: dotfiles
   keepdot: false
+  ignore_missing_in_dotdrop: true
   link_dotfile_default: nolink
   link_on_import: nolink
   longkey: false
@@ -51,8 +52,13 @@ dotfiles:
   d_kube:
     src: kube
     dst: ~/.kube
+    upignore:
+    - '*/cache'
+    instignore:
+    - '*/cache'
     trans_read: gpgdir
     trans_write: gpgdir
+    chmod: '755'
 profiles:
   shiwei-mbp:
     dotfiles:
