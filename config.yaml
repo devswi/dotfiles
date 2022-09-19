@@ -1,4 +1,12 @@
 config:
+  cmpignore:
+  - tmp
+  - '*/cache'
+  instignore:
+  - '*/.DS_Store'
+  - '*/cache'
+  upignore:
+  - '*/cache'
   backup: false
   banner: true
   create: true
@@ -7,20 +15,6 @@ config:
   link_dotfile_default: nolink
   link_on_import: nolink
   longkey: false
-  impignore:
-  - .local-history
-  - cache
-  - .DS_Store
-  - '**/*/.DS_Store'
-  - tmp
-  - compiled.*
-  cmpignore:
-  - tmp
-  - '*/cache'
-  instignore:
-  - .DS_Store
-  - '**/*/.DS_Store'
-  - '*/cache'
 variables:
   keyid: 9D41FF247926E119
 trans_read:
@@ -41,11 +35,9 @@ dotfiles:
     dst: ~/.config/nvim
     upignore:
     - .local-history
-    - .DS_Store
     - lua/compiled.lua
     cmpignore:
     - .local-history
-    - .DS_Store
     - lua/compiled.lua
   f_tmux.conf:
     src: tmux.conf
@@ -56,6 +48,11 @@ dotfiles:
     chmod: '700'
     trans_read: gpgdir
     trans_write: gpgdir
+  d_kube:
+    src: kube
+    dst: ~/.kube
+    trans_read: gpgdir
+    trans_write: gpgdir
 profiles:
   shiwei-mbp:
     dotfiles:
@@ -64,3 +61,4 @@ profiles:
     - d_nvim
     - f_tmux.conf
     - d_ssh
+    - d_kube
