@@ -1,12 +1,8 @@
 config:
-  cmpignore:
-  - tmp
-  - '*/cache'
   instignore:
   - '*/.DS_Store'
-  - '*/cache'
   upignore:
-  - '*/cache'
+  - '*/.DS_Store'
   backup: false
   banner: true
   create: true
@@ -49,16 +45,6 @@ dotfiles:
     chmod: '700'
     trans_read: gpgdir
     trans_write: gpgdir
-  d_kube:
-    src: kube
-    dst: ~/.kube
-    upignore:
-    - '*/cache'
-    instignore:
-    - '*/cache'
-    trans_read: gpgdir
-    trans_write: gpgdir
-    chmod: '755'
 profiles:
   shiwei-mbp:
     dotfiles:
@@ -67,4 +53,3 @@ profiles:
     - d_nvim
     - f_tmux.conf
     - d_ssh
-    - d_kube
