@@ -45,6 +45,11 @@ dotfiles:
     chmod: '700'
     trans_read: gpgdir
     trans_write: gpgdir
+  f_config:
+    src: kube/config
+    dst: ~/.kube/config
+    trans_read: gpg
+    trans_write: gpg
 profiles:
   shiwei-mbp:
     dotfiles:
@@ -53,3 +58,4 @@ profiles:
     - d_nvim
     - f_tmux.conf
     - d_ssh
+    - f_config
