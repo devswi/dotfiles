@@ -23,7 +23,6 @@ return packer.startup(function()
   use({
     'goolord/alpha-nvim',
     requires = { 'kyazdani42/nvim-web-devicons' },
-    commit = 'd688f46090a582be8f9d7b70b4cf999b780e993d',
     config = function()
       require('settings.alpha')
     end,
@@ -32,7 +31,6 @@ return packer.startup(function()
   -- term
   use({
     'akinsho/toggleterm.nvim',
-    commit = '62683d927dfd30dc68441a5811fdcb6c9f176c42',
     config = require('settings.toggleterm').setup,
   })
 
@@ -105,7 +103,6 @@ return packer.startup(function()
         config = function()
           require('lsp.null-ls')
         end,
-        commit = '7cd491b7458a5dd23a6fa3abb6c94341be546f7b',
         after = 'nvim-lspconfig',
       },
       {
@@ -160,7 +157,6 @@ return packer.startup(function()
   -- comments
   use({
     'numToStr/Comment.nvim',
-    commit = 'ae8c440fe98c65f3a941d6fc6de75538c5c1ecde',
     config = function()
       require('settings.comments')
     end,
@@ -169,7 +165,6 @@ return packer.startup(function()
 
   use({
     'norcalli/nvim-colorizer.lua',
-    commit = '36c610a9717cc9ec426a07c8e6bf3b3abcb139d6',
     config = function()
       require('settings.colorizer')
     end,
@@ -180,7 +175,6 @@ return packer.startup(function()
   -- highlighting indent
   use({
     'lukas-reineke/indent-blankline.nvim',
-    tag = 'v2.20.0',
     config = function()
       require('settings.blankline')
     end,
@@ -191,7 +185,6 @@ return packer.startup(function()
   -- gitsigns
   use({
     'lewis6991/gitsigns.nvim',
-    commit = '16e5ecc5f5ddf89dc287b4caece9abc9f7ebb506',
     event = 'BufReadPre',
     wants = 'plenary.nvim',
     requires = { 'nvim-lua/plenary.nvim' },
@@ -203,7 +196,6 @@ return packer.startup(function()
   -- nvimtree
   use({
     'kyazdani42/nvim-tree.lua',
-    commit = '3e49d9b7484e21f0b24ebdf21b8b7af227ea97a6',
     requires = { 'kyazdani42/nvim-web-devicons', opt = true },
     config = function()
       require('settings.nvimtree')
@@ -229,7 +221,6 @@ return packer.startup(function()
   use({
     'akinsho/bufferline.nvim',
     require = { 'nvim-web-devicons', opt = true },
-    tag = 'v2.6.0',
     opt = true,
     event = 'BufRead',
     config = require('settings.buffer_line').setup,
@@ -249,7 +240,6 @@ return packer.startup(function()
   -- which key
   use({
     'folke/which-key.nvim',
-    commit = '7d260629f7a7e9de6f80b31aa347e2c930925540',
     config = function()
       require('settings.which_key')
       require('core.keymappings.whichkey')
@@ -378,7 +368,6 @@ return packer.startup(function()
   -- ZenMode
   use({
     'folke/zen-mode.nvim',
-    commit = 'f1cc53d32b49cf962fb89a2eb0a31b85bb270f7c',
     opt = true,
     cmd = 'ZenMode',
     config = function()

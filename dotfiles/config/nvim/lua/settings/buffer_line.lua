@@ -8,7 +8,10 @@ M.setup = function()
       numbers = 'ordinal', -- | "ordinal" | "buffer_id" | "both" | function({ ordinal, id, lower, raise }): string,
       close_command = 'bdelete! %d', -- can be a string | function, see "Mouse actions"
       middle_mouse_command = nil, -- can be a string | function, see "Mouse actions"
-      indicator_icon = '▎',
+      indicator = {
+        style = 'icon',
+        icon = '▎',
+      },
       buffer_close_icon = '',
       modified_icon = '●',
       close_icon = '',
