@@ -32,6 +32,7 @@ return {
         'sumneko_lua',
         'stylua',
         'tailwindcss',
+        'rust-analyzer',
       },
     })
   end,

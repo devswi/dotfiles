@@ -36,6 +36,10 @@ local function keymappings(client, bufnr)
         '<cmd>Lspsaga preview_definition<CR>',
         'Preview Definition',
       },
+      -- t = {
+      --   '<cmd>LspToggleAutoFormat<CR>',
+      --   'Toggle Format on Save',
+      -- },
     },
   }
   if client.server_capabilities.documentFormattingProvider then

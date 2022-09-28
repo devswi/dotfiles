@@ -46,17 +46,15 @@ M.setup = function()
 end
 
 M.on_attach = function(client, bufnr)
-  vim.api.nvim_buf_set_option(bufnr, 'omnifunc', 'v:lua.vim.lsp.omnifunc')
+  local function buf_set_option(...)
+    vim.api.nvim_buf_set_option(bufnr, ...)
+  end
 
-  -- Use LSP as the handler for formatexpr.
-  -- See `:help formatexpr` for more information.
-  vim.api.nvim_buf_set_option(bufnr, 'formatexpr', 'v:lua.vim.lsp.formatexpr()')
+  buf_set_option('omnifunc', 'v:lua.vim.lsp.omnifunc') -- Use LSP as the handler for formatexpr.
 
   if client.server_capabilities.documentSymbolProvider then
     require('nvim-navic').attach(client, bufnr)
   end
-
-  -- aerial.nvim
   require('aerial').on_attach(client, bufnr)
   require('lsp_signature').on_attach()
   require('core.autocommand').lsp_autocmds(client, bufnr)

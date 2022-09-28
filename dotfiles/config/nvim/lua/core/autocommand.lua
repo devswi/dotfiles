@@ -60,26 +60,17 @@ return {
         group = group,
       })
     end
-    if client.server_capabilities.document_formatting or client.server_capabilities.documentFormattingProvider then
-      local group = augroup('LSPAutoFormat')
-
-      -- auto format file on save
-      autocmd({ 'BufWritePre' }, {
-        desc = 'Auto format file before saving',
-        buffer = bufnr,
-        command = 'silent! undojoin | lua vim.lsp.buf.format({ async = false })',
-        group = group,
-      })
-    end
-    -- local group = augroup('LSPDianostics')
-    -- autocmd({ 'CursorHold', 'CursorHoldI' }, {
-    --   desc = 'Show box with diagnostics for current line',
-    --   pattern = '*',
-    --   callback = function()
-    --     require('lspsaga.diagnostic').goto_next({})
-    --   end,
-    --   group = group,
-    -- })
+    -- if client.server_capabilities.document_formatting or client.server_capabilities.documentFormattingProvider then
+    --   local group = augroup('LSPAutoFormat')
+    --
+    --   -- auto format file on save
+    --   autocmd({ 'BufWritePre' }, {
+    --     desc = 'Auto format file before saving',
+    --     buffer = bufnr,
+    --     command = 'silent! undojoin | lua vim.lsp.buf.format({ async = false })',
+    --     group = group,
+    --   })
+    -- end
   end,
   setup = function()
     local autocmd = vim.api.nvim_create_autocmd
