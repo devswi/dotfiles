@@ -8,7 +8,8 @@ function M.enable_format_on_save()
     end,
     group = group,
   })
-  vim.notify('Enabled format on save')
+  require('notify')('Enabled format on save', 'info', { title = 'LSP', timeout = 2000 })
+  vim.notify('Disabled format on save')
 end
 
 function M.disable_format_on_save()

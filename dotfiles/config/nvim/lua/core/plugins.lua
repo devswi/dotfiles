@@ -12,7 +12,6 @@ return packer.startup(function()
   use({
     'wbthomason/packer.nvim',
     'lewis6991/impatient.nvim',
-    'nathom/filetype.nvim',
     'nvim-lua/plenary.nvim',
     'tpope/vim-surround',
     'tpope/vim-repeat',
