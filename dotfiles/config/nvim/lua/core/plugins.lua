@@ -79,7 +79,7 @@ return packer.startup(function()
       'JoosepAlviste/nvim-ts-context-commentstring',
       'nvim-treesitter/nvim-treesitter-refactor',
       'nvim-treesitter/nvim-tree-docs',
-      { 'nvim-treesitter/nvim-treesitter-textobjects' },
+      'nvim-treesitter/nvim-treesitter-textobjects',
     },
     config = function()
       require('settings.treesitter')
@@ -186,7 +186,7 @@ return packer.startup(function()
     'lewis6991/gitsigns.nvim',
     event = 'BufReadPre',
     wants = 'plenary.nvim',
-    tags = 'v0.5',
+    tag = 'v0.5',
     requires = { 'nvim-lua/plenary.nvim' },
     config = function()
       require('settings.gitsigns')
