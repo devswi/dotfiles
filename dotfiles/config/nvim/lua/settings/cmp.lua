@@ -41,6 +41,7 @@ M.setup = function()
     sources = {
       { name = 'nvim_lsp', priority = 99 },
       { name = 'luasnip', priority = 90 },
+      { name = 'nvim_lsp_signature_help', priority = 90 },
       { name = 'nvim_lua', priority = 80 },
       { name = 'path', priority = 10 },
       { name = 'buffer', priority = 0 },

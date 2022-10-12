@@ -115,6 +115,7 @@ return packer.startup(function()
         config = function()
           require('settings.lspsignature').setup()
         end,
+        disable = true,
         after = 'nvim-lspconfig',
       },
     },
@@ -137,6 +138,7 @@ return packer.startup(function()
       { 'hrsh7th/cmp-cmdline', after = 'nvim-cmp' },
       { 'hrsh7th/cmp-nvim-lsp' },
       { 'hrsh7th/cmp-nvim-lua' },
+      { 'hrsh7th/cmp-nvim-lsp-signature-help' },
       { 'saadparwaiz1/cmp_luasnip', after = 'nvim-cmp' },
       {
         'L3MON4D3/LuaSnip',
@@ -374,6 +376,7 @@ return packer.startup(function()
     config = function()
       require('settings.zenmode').setup()
     end,
+    disable = true,
   })
 
   -- lightbulb
@@ -382,6 +385,7 @@ return packer.startup(function()
     requires = 'antoinemadec/FixCursorHold.nvim',
     opt = true,
     event = 'BufWinEnter',
+    disable = true,
     config = require('settings.lightbulb').setup,
   })
 
