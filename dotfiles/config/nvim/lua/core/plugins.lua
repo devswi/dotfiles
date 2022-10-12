@@ -31,6 +31,7 @@ return packer.startup(function()
   use({
     'akinsho/toggleterm.nvim',
     config = require('settings.toggleterm').setup,
+    disable = true,
   })
 
   -- theme

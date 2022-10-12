@@ -50,6 +50,10 @@ dotfiles:
     dst: ~/.kube/config
     trans_read: gpg
     trans_write: gpg
+  f_popuptmux.sh:
+    src: local/bin/popuptmux.sh
+    dst: ~/.local/bin/popuptmux.sh
+    chmod: '755'
 profiles:
   shiwei-mbp:
     dotfiles:
@@ -59,3 +63,4 @@ profiles:
     - f_tmux.conf
     - d_ssh
     - f_config
+    - f_popuptmux.sh

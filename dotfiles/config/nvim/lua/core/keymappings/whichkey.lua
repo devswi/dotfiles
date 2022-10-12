@@ -16,12 +16,12 @@ local noremal_mode_mappings = {
     s = { ':AerialTreeSyncFolds<CR>', 'Sync code folding' },
     i = { ':AerialInfo<CR>', 'Info' },
   },
-  s = {
-    name = 'Shell',
-    h = { ':ToggleTerm<CR>', 'Horizontal' },
-    v = { ':ToggleTerm direction=vertical<CR>', 'Vertical' },
-    f = { ':ToggleTerm direction=float<CR>', 'Float' },
-  },
+  -- s = {
+  --   name = 'Shell',
+  --   h = { ':ToggleTerm<CR>', 'Horizontal' },
+  --   v = { ':ToggleTerm direction=vertical<CR>', 'Vertical' },
+  --   f = { ':ToggleTerm direction=float<CR>', 'Float' },
+  -- },
   b = {
     name = 'Buffer',
     c = {
@@ -123,7 +123,7 @@ local noremal_mode_mappings = {
     b = { ':RustMoveItemDown<CR>', 'Move Item Down' },
     u = { ':RustMoveItemUp<CR>', 'Move Item Up' },
     s = { ':RustStartStandaloneServerForBuffer<CR>', 'New Server for Buffer' },
-    t = { '<cmd>lua require("settings.toggleterm").run_float("cargo test")<CR>', 'Run tests' },
+    -- t = { '<cmd>lua require("settings.toggleterm").run_float("cargo test")<CR>', 'Run tests' },
   },
   w = {
     '<cmd>w!<cr>',
