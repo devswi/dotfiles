@@ -61,13 +61,13 @@ M.on_attach = function(client, bufnr)
   require('lsp.keymaps').setup(client, bufnr)
 end
 
-local capabilities = vim.lsp.protocol.make_client_capabilities()
+local capabilities = require('cmp_nvim_lsp').default_capabilities()
 capabilities.textDocument.completion.completionItem.snippetSupport = true
 capabilities.textDocument.foldingRange = {
   dynamicRegistration = false,
   lineFoldingOnly = true,
 }
 
-M.capabilities = require('cmp_nvim_lsp').update_capabilities(capabilities)
+M.capabilities = capabilities
 
 return M

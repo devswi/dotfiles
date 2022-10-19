@@ -214,7 +214,7 @@ return packer.startup(function()
 
   use({
     'nvim-lualine/lualine.nvim',
-    requires = { 'kyazdani42/nvim-web-devicons', opt = true },
+    requires = { 'nvim-tree/nvim-web-devicons', opt = true },
     config = function()
       require('settings.statusline')
     end,
@@ -406,5 +406,12 @@ return packer.startup(function()
     config = require('settings.neogen').setup,
     cmd = { 'Neogen' },
     module = 'neogen',
+  })
+
+  -- fold
+  use({
+    'kevinhwang91/nvim-ufo',
+    requires = 'kevinhwang91/promise-async',
+    config = require('settings.ufo').setup,
   })
 end)

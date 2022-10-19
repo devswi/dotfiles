@@ -30,9 +30,8 @@ return {
         'tsserver',
         'jsonls',
         'sumneko_lua',
-        'stylua',
         'tailwindcss',
-        'rust-analyzer',
+        'rust_analyzer',
       },
     })
   end,
