@@ -1,5 +1,3 @@
-local config = require('config')
-
 local function filter(arr, fn)
   if type(arr) ~= 'table' then
     return arr

@@ -22,17 +22,33 @@ return {
 
     local rust = require('lsp.servers.rust-analyzer')
     rust.setup(capabilities, on_attach)
+
+    local css = require('lsp.servers.cssls')
+    css.setup(lspconfig, capabilities, on_attach)
+
+    local vue = require('lsp.servers.vuels')
+    vue.setup(lspconfig, capabilities, on_attach)
+
+    lspconfig.bashls.setup({
+      on_attach = on_attach,
+      capabilities = capabilities,
+    })
   end,
   setup = function()
     require('mason').setup()
     require('mason-lspconfig').setup({
       ensure_installed = {
+        'bashls',
+        'cssls',
+        'html',
         'tsserver',
         'jsonls',
         'sumneko_lua',
         'tailwindcss',
         'rust_analyzer',
+        'vuels',
       },
+      automatic_installation = true,
     })
   end,
 }
