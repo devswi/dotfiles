@@ -4,7 +4,6 @@ aerial.setup({
   backends = { 'lsp', 'treesitter', 'markdown' },
   attach_mode = 'window',
   default_bindings = true,
-  default_direction = 'prefer_right',
   disable_max_lines = 10000,
   -- Disable aerial on files this size or larger (in bytes)
   disable_max_size = 10000000,
@@ -103,33 +102,23 @@ aerial.setup({
   -- Use symbol tree for folding. Set to true or false to enable/disable
   -- 'auto' will manage folds if your previous foldmethod was 'manual'
   manage_folds = false,
-
-  -- These control the width of the aerial window.
-  -- They can be integers or a float between 0 and 1 (e.g. 0.4 for 40%)
-  -- min_width and max_width can be a list of mixed types.
-  -- max_width = {40, 0.2} means "the lesser of 40 columns or 20% of total"
-  max_width = { 50 },
-  width = nil,
-  min_width = 30,
+  layout = {
+    max_width = { 50 },
+    width = nil,
+    min_width = 30,
+    default_direction = 'prefer_right',
+    placement_editor_edge = false,
+  },
 
   -- Set default symbol icons to use patched font icons (see https://www.nerdfonts.com/)
   -- "auto" will set it to true if nvim-web-devicons or lspkind-nvim is installed.
   nerd_font = 'auto',
-
-  -- Call this function when aerial attaches to a buffer.
-  -- Useful for setting keymaps. Takes a single `bufnr` argument.
-  on_attach = function(bufnr)
-    -- Toggle the aerial window with <leader>a
-    -- vim.api.nvim_buf_set_keymap(bufnr, 'n', 'o', '<cmd>AerialGo<CR>', {})
-  end,
-
   -- Automatically open aerial when entering supported buffers.
   -- This can be a function (see :help aerial-open-automatic)
   open_automatic = false,
 
   -- Set to true to only open aerial at the far right/left of the editor
   -- Default behavior opens aerial relative to current window
-  placement_editor_edge = false,
 
   -- Run this command after jumping to a symbol (false will disable)
   post_jump_cmd = 'normal! zz',
