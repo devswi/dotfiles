@@ -189,7 +189,6 @@ return packer.startup(function()
     'lewis6991/gitsigns.nvim',
     event = 'BufReadPre',
     wants = 'plenary.nvim',
-    tag = 'v0.5',
     requires = { 'nvim-lua/plenary.nvim' },
     config = function()
       require('settings.gitsigns')
@@ -203,7 +202,6 @@ return packer.startup(function()
     config = function()
       require('settings.nvimtree')
     end,
-    commit = 'c5536db0b7a9e13709af16a0ffe1ab20137f8a48',
     opt = true,
     cmd = {
       'NvimTreeClose',
