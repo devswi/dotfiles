@@ -1,6 +1,6 @@
 require('gitsigns').setup({
   signs = {
-    add = { hl = 'GitSignsAdd', text = '▍', numhl = 'GitSignsAddNr', linehl = 'GitSignsAddLn' },
+    add = { hl = 'GitSignsAdd', text = '│', numhl = 'GitSignsAddNr', linehl = 'GitSignsAddLn' },
     change = {
       hl = 'GitSignsChange',
       text = '▍',
@@ -25,6 +25,7 @@ require('gitsigns').setup({
       numhl = 'GitSignsChangeNr',
       linehl = 'GitSignsChangeLn',
     },
+    untracked = { hl = 'GitSignsAdd', text = '┆', numhl = 'GitSignsAddNr', linehl = 'GitSignsAddLn' },
   },
   current_line_blame = true, -- Toggle with `:Gitsigns toggle_current_line_blame`
   current_line_blame_opts = {
