@@ -7,7 +7,16 @@ return {
     lspconfig.tailwindcss.setup({
       on_attach = on_attach,
       capabilities = capabilities,
-      filetypes = { 'html', 'mdx', 'javascript', 'javascriptreact', 'typescriptreact', 'vue', 'svelte' },
+      filetypes = {
+        'html',
+        'markdown',
+        'mdx',
+        'javascript',
+        'javascriptreact',
+        'typescriptreact',
+        'vue',
+        'svelte',
+      },
       init_options = {
         userLanguages = {
           eelixir = 'html-eex',

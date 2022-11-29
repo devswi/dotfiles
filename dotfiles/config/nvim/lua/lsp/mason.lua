@@ -33,6 +33,16 @@ return {
       on_attach = on_attach,
       capabilities = capabilities,
     })
+
+    lspconfig.marksman.setup({
+      on_attach = on_attach,
+      capabilities = capabilities,
+      filetypes = {
+        'markdown',
+        'markdown.mdx',
+        'mdx',
+      },
+    })
   end,
   setup = function()
     require('mason').setup()
@@ -47,6 +57,7 @@ return {
         'tailwindcss',
         'rust_analyzer',
         'vuels',
+        'marksman',
       },
       automatic_installation = true,
     })
