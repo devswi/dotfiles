@@ -4,6 +4,33 @@ if not null_ls_status_ok then
   return
 end
 
+local with_root_file = function(...)
+  local files = { ... }
+  return function(utils)
+    return utils.root_has_file(files)
+  end
+end
+
+local with_eslint_files = function()
+  return with_root_file({
+    '.eslintrc.js',
+    '.eslintrc.cjs',
+    '.eslintrc.yaml',
+    '.eslintrc.yml',
+    '.eslintrc.json',
+  })
+end
+
+local with_prettier_files = function()
+  return with_root_file({
+    '.prettierrc.json',
+    '.prettierrc.yml',
+    '.prettierrc.yaml',
+    '.prettierrc.js',
+    '.prettierrc.cjs',
+  })
+end
+
 -- https://github.com/jose-elias-alvarez/null-ls.nvim/tree/main/lua/null-ls/builtins/formatting
 local formatting = null_ls.builtins.formatting
 -- https://github.com/jose-elias-alvarez/null-ls.nvim/tree/main/lua/null-ls/builtins/diagnostics
@@ -31,15 +58,25 @@ null_ls.setup({
     formatting.stylua,
     formatting.rustfmt,
     -- formatting
-    -- eslint_d 和 prettier 的顺序不能反
-    formatting.eslint_d,
-    formatting.prettierd,
+    -- eslint 和 prettier 的顺序不能反
+    formatting.eslint_d.with({
+      condition = with_eslint_files(),
+    }),
+    formatting.prettier.with({
+      condition = with_prettier_files(),
+    }),
+
+    formatting.deno_fmt,
 
     -- diagnostics
-    diagnostics.eslint_d,
+    diagnostics.eslint_d.with({
+      condition = with_eslint_files(),
+    }),
 
     -- code actions
-    codeactions.eslint_d,
+    codeactions.eslint_d.with({
+      condition = with_eslint_files(),
+    }),
     codeactions.gitsigns,
   },
   on_attach = function(client, bufnr)

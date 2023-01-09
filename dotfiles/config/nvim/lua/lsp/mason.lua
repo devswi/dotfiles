@@ -43,6 +43,17 @@ return {
         'mdx',
       },
     })
+
+    lspconfig.denols.setup({
+      on_attach = on_attach,
+      capabilities = capabilities,
+      root_dir = lspconfig.util.root_pattern('deno.json'),
+      init_options = {
+        enable = true,
+        lint = true,
+        unstable = true,
+      },
+    })
   end,
   setup = function()
     require('mason').setup()
@@ -51,6 +62,7 @@ return {
         'bashls',
         'cssls',
         'html',
+        'denols',
         'tsserver',
         'jsonls',
         'sumneko_lua',
