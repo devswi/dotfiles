@@ -28,6 +28,8 @@ local with_prettier_files = function()
     '.prettierrc.yaml',
     '.prettierrc.js',
     '.prettierrc.cjs',
+    'prettier.config.js',
+    'prettier.config.cjs',
   })
 end
 
