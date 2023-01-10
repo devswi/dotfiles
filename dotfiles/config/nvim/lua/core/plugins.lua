@@ -341,20 +341,24 @@ return packer.startup(function()
 
   use({
     'mfussenegger/nvim-dap',
+    disable = true,
     requires = {
       {
         'rcarriga/nvim-dap-ui', -- ui for nvim-dap
-        disable = true,
       },
       {
         'theHamsta/nvim-dap-virtual-text', -- virtual text during debugging
-        disable = true,
+      },
+      { 'mxsdev/nvim-dap-vscode-js' },
+      {
+        'microsoft/vscode-js-debug',
+        opt = true,
+        run = 'npm install --legacy-peer-deps && npm run compile',
       },
     },
     config = function()
       require('settings.dap').setup()
     end,
-    disable = true,
   })
 
   -- markdown preview

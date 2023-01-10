@@ -62,7 +62,6 @@ return {
         'bashls',
         'cssls',
         'html',
-        'denols',
         'tsserver',
         'jsonls',
         'sumneko_lua',
@@ -71,7 +70,7 @@ return {
         'vuels',
         'marksman',
       },
-      automatic_installation = true,
+      automatic_installation = false,
     })
   end,
 }

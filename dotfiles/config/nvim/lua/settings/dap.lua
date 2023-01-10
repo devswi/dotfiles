@@ -47,6 +47,7 @@ end
 
 local function configure_debuggers()
   require('lsp.dap.rust').setup()
+  require('lsp.dap.javascript').setup()
 end
 
 local function configure_keymaps()
