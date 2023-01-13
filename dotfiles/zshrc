@@ -22,6 +22,9 @@ alias zshupdate='omz update'
 alias vim='nvim'
 alias vi='nvim'
 
+# npm -> pnpm
+alias npm='pnpm'
+
 # dotdrop
 alias dotdrop='dotdrop --cfg=$HOME/Git/dotfiles/config.yaml'
 
