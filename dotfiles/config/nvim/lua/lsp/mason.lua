@@ -44,15 +44,12 @@ return {
       },
     })
 
-    lspconfig.denols.setup({
-      on_attach = on_attach,
+    lspconfig.html.setup({
       capabilities = capabilities,
-      root_dir = lspconfig.util.root_pattern('deno.json'),
-      init_options = {
-        enable = true,
-        lint = true,
-        unstable = true,
-      },
+    })
+
+    lspconfig.emmet_ls.setup({
+      capabilities = capabilities,
     })
   end,
   setup = function()
@@ -62,6 +59,7 @@ return {
         'bashls',
         'cssls',
         'html',
+        'emmet_ls',
         'tsserver',
         'jsonls',
         'sumneko_lua',
