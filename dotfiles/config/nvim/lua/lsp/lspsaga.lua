@@ -1,6 +1,6 @@
 local lspsaga = require('lspsaga')
 
-lspsaga.init_lsp_saga({
+lspsaga.setup({
   -- "single" | "double" | "rounded" | "bold" | "plus"
   border_style = 'rounded',
   -- when cursor in saga window you config these to move
