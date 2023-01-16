@@ -1,8 +1,10 @@
 local lspsaga = require('lspsaga')
 
 lspsaga.setup({
-  -- "single" | "double" | "rounded" | "bold" | "plus"
-  border_style = 'rounded',
+  preview = {
+    lines_above = 10,
+    lines_below = 10,
+  },
   -- when cursor in saga window you config these to move
   move_in_saga = { prev = '<C-p>', next = '<C-n>' },
   -- Error, Warn, Info, Hint
@@ -15,26 +17,22 @@ lspsaga.setup({
   -- is function type it will have a param `entry`
   -- entry is a table type has these filed
   -- { bufnr, code, col, end_col, end_lnum, lnum, message, severity, source }
-  diagnostic_header = { ' ', ' ', ' ', '' },
-  -- use emoji lightbulb in default
-  code_action_icon = '💡',
-  -- if true can press number to execute the codeaction in codeaction window
-  code_action_num_shortcut = true,
-  -- same as nvim-lightbulb but async
-  code_action_lightbulb = {
+  lightbulb = {
     enable = false,
-    sign = true,
-    sign_priority = 20,
-    virtual_text = true,
+  },
+  code_action = {
+    num_shortcut = true,
+    keys = {
+      quit = 'q',
+      exec = '<CR>',
+    },
   },
   finder_icons = {
     def = '  ',
     ref = '諭 ',
     link = '  ',
   },
-  -- preview lines of lsp_finder and definition preview
-  max_preview_lines = 10,
-  finder_action_keys = {
+  finder = {
     open = 'o',
     vsplit = 's',
     split = 'i',
@@ -43,11 +41,11 @@ lspsaga.setup({
     scroll_down = '<C-d>',
     scroll_up = '<C-u>', -- quit can be a table
   },
-  code_action_keys = {
-    quit = 'q',
+  rename = {
+    quit = '<C-c>',
     exec = '<CR>',
+    mark = 'x',
   },
-  rename_action_quit = '<C-c>',
   symbol_in_winbar = {
     enable = false,
     show_file = false,

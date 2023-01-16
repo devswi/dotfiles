@@ -50,3 +50,6 @@ keymap('i', 'jk', '<ESC>', opts)
 
 keymap('i', '<C-b>', '<Left>')
 keymap('i', '<C-f>', '<Right>')
+
+keymap('n', ']<space>', 'o<ESC>', opts)
+keymap('n', '[<space>', 'O<ESC>', opts)
