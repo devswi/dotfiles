@@ -5,5 +5,8 @@
         "vim",
         "nam"
     ],
-    "Lua.workspace.checkThirdParty": false
+    "Lua.workspace.checkThirdParty": false,
+    "Lua.workspace.library": [
+        "${3rd}/luassert/library"
+    ]
 }

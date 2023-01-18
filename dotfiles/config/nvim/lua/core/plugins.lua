@@ -106,12 +106,6 @@ return packer.startup(function()
         after = 'nvim-lspconfig',
       },
       {
-        'glepnir/lspsaga.nvim',
-        config = function()
-          require('lsp.lspsaga')
-        end,
-      },
-      {
         'ray-x/lsp_signature.nvim',
         config = function()
           require('settings.lspsignature').setup()
@@ -193,6 +187,20 @@ return packer.startup(function()
     config = function()
       require('settings.gitsigns')
     end,
+  })
+
+  -- hover.nvim
+  use({
+    'lewis6991/hover.nvim',
+    event = 'BufReadPre',
+    config = require('settings.hover').setup,
+  })
+
+  -- renamer
+  use({
+    'filipdutescu/renamer.nvim',
+    requires = { 'nvim-lua/plenary.nvim' },
+    config = require('settings.renamer').setup,
   })
 
   -- nvimtree
