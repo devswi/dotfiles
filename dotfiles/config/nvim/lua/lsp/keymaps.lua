@@ -32,10 +32,6 @@ local function keymappings(client, bufnr)
         '<cmd>AerialToggle<CR>',
         'Document Symbols',
       },
-      p = {
-        '<cmd>Lspsaga preview_definition<CR>',
-        'Preview Definition',
-      },
       -- t = {
       --   '<cmd>LspToggleAutoFormat<CR>',
       --   'Toggle Format on Save',

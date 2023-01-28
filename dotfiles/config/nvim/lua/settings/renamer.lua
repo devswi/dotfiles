@@ -15,7 +15,7 @@ M.setup = function()
     -- The minimum width of the popup
     min_width = 15,
     -- The maximum width of the popup
-    max_width = 45,
+    max_width = 100,
     -- Whether or not to shown a border around the popup
     border = true,
     -- The characters which make up the border
@@ -26,7 +26,7 @@ M.setup = function()
     with_qf_list = true,
     -- Whether or not to enter the new name through the UI or Neovim's `input`
     -- prompt
-    with_popup = true,
+    with_popup = false,
     -- The keymaps available while in the `renamer` buffer. The example below
     -- overrides the default values, but you can add others as well.
     mappings = {

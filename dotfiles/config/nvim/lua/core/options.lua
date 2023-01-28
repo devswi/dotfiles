@@ -57,3 +57,6 @@ end
 
 vim.cmd('set whichwrap+=<,>,[,],h,l')
 vim.cmd([[set iskeyword+=-]])
+
+-- custom style used in hover
+vim.api.nvim_set_hl(0, 'HoverTitle', { fg = '#ffffff', bg = '#2e7de9', bold = true })

@@ -53,6 +53,3 @@ keymap('i', '<C-f>', '<Right>')
 
 keymap('n', ']<space>', 'o<ESC>', opts)
 keymap('n', '[<space>', 'O<ESC>', opts)
-
--- go to definition
-keymap('n', 'gd', vim.lsp.buf.definition, opts)

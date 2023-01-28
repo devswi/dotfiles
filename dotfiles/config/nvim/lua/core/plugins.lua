@@ -189,13 +189,6 @@ return packer.startup(function()
     end,
   })
 
-  -- hover.nvim
-  use({
-    'lewis6991/hover.nvim',
-    event = 'BufReadPre',
-    config = require('settings.hover').setup,
-  })
-
   -- renamer
   use({
     'filipdutescu/renamer.nvim',
