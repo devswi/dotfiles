@@ -1,5 +1,6 @@
 local navic = require('nvim-navic')
 local colors = require('colorscheme.colors.init')
+local config = require('config')
 
 local hide_in_width = function()
   return vim.fn.winwidth(0) > 80
@@ -78,9 +79,9 @@ local lsp_tbl = {
 require('lualine').setup({
   options = {
     icons_enabled = true,
-    theme = 'auto',
-    component_separators = { left = '', right = '' },
-    section_separators = { left = '', right = '' },
+    theme = config.theme,
+    component_separators = '',
+    section_separators = '',
     globalstatus = true,
     disabled_filetypes = {
       statusline = { 'alpha', 'aerial', 'toggleterm', 'dashboard', 'Trouble', 'Outline', 'packer', 'floaterm' },
