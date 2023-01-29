@@ -46,7 +46,7 @@ catppuccin.setup({
       },
     },
     coc_nvim = false,
-    lsp_trouble = false,
+    lsp_trouble = true,
     cmp = true,
     lsp_saga = false,
     gitgutter = false,
@@ -56,7 +56,7 @@ catppuccin.setup({
     nvimtree = {
       enabled = true,
       show_root = true,
-      transparent_panel = false,
+      transparent_panel = true,
     },
     neotree = {
       enabled = false,
@@ -67,7 +67,7 @@ catppuccin.setup({
       enabled = false,
       enable_ui = false,
     },
-    which_key = false,
+    which_key = true,
     indent_blankline = {
       enabled = true,
       colored_indent_levels = false,
@@ -86,7 +86,7 @@ catppuccin.setup({
     telekasten = true,
     symbols_outline = true,
     mini = false,
-    aerial = false,
+    aerial = true,
     vimwiki = true,
     beacon = true,
     navic = false,

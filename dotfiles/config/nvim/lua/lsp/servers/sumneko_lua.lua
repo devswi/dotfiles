@@ -20,6 +20,7 @@ return {
           },
           workspace = {
             library = lua_runtime,
+            checkThirdParty = false,
           },
           telemetry = {
             enable = false,

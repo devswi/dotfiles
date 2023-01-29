@@ -84,6 +84,9 @@ local icons = {
     Operator = '',
     TypeParameter = '',
   },
+  terminal = ' ',
+  magnifying = ' ',
+  indicator = '',
 }
 
 return icons

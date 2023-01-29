@@ -6,7 +6,9 @@ end
 
 local notify_renders = require('notify.render')
 
-vim.notify = notify
+vim.notify = function(msg, ...)
+  notify(string.format('%s aksdajskdjalskdjlakjsd', msg), ...)
+end
 notify.setup({
   -- Animation style (see below for details)
   stages = 'fade_in_slide_out',

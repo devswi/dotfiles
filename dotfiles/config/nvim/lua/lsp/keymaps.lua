@@ -13,7 +13,7 @@ local function keymappings(client, bufnr)
       },
       R = { '<cmd>Telescope lsp_references<CR>', 'References' },
       a = {
-        '<cmd>Lspsaga code_action<CR>',
+        '<cmd>CodeActionMenu<CR>',
         'Code Action',
       },
       d = {

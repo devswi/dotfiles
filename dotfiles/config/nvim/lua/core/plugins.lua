@@ -13,9 +13,11 @@ return packer.startup(function()
     'wbthomason/packer.nvim',
     'lewis6991/impatient.nvim',
     'nvim-lua/plenary.nvim',
+    'nvim-lua/popup.nvim',
     'tpope/vim-surround',
     'tpope/vim-repeat',
     'terryma/vim-multiple-cursors',
+    'kyazdani42/nvim-web-devicons',
   })
 
   -- dashboard
@@ -105,14 +107,6 @@ return packer.startup(function()
         end,
         after = 'nvim-lspconfig',
       },
-      {
-        'ray-x/lsp_signature.nvim',
-        config = function()
-          require('settings.lspsignature').setup()
-        end,
-        disable = true,
-        after = 'nvim-lspconfig',
-      },
     },
   })
 
@@ -133,7 +127,6 @@ return packer.startup(function()
       { 'hrsh7th/cmp-cmdline', after = 'nvim-cmp' },
       { 'hrsh7th/cmp-nvim-lsp' },
       { 'hrsh7th/cmp-nvim-lua' },
-      { 'hrsh7th/cmp-nvim-lsp-signature-help' },
       { 'saadparwaiz1/cmp_luasnip', after = 'nvim-cmp' },
       {
         'L3MON4D3/LuaSnip',
@@ -270,9 +263,9 @@ return packer.startup(function()
   --
   use({
     'rcarriga/nvim-notify',
-    config = function()
-      require('settings.notify')
-    end,
+    -- config = function()
+    -- require('settings.notify')
+    -- end,
     after = require('config').theme,
   })
 
@@ -372,6 +365,20 @@ return packer.startup(function()
     ft = { 'markdown' },
   })
 
+  use({
+    'shiwei93/noice.nvim',
+    branch = 'chore/ignore-no-information-available-notify',
+    config = require('settings.noice_setting').config,
+    requires = {
+      { 'MunifTanjim/nui.nvim' },
+    },
+  })
+
+  use({
+    'weilbith/nvim-code-action-menu',
+    cmd = 'CodeActionMenu',
+  })
+
   -- ZenMode
   use({
     'folke/zen-mode.nvim',
@@ -389,7 +396,6 @@ return packer.startup(function()
     requires = 'antoinemadec/FixCursorHold.nvim',
     opt = true,
     event = 'BufWinEnter',
-    disable = true,
     config = require('settings.lightbulb').setup,
   })
 

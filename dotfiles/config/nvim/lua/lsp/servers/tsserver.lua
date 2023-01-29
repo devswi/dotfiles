@@ -50,7 +50,6 @@ local handlers = {
         return not diagnostic.message:find('is declared but its value is never read')
       end, result.diagnostics)
     end
-
     return vim.lsp.diagnostic.on_publish_diagnostics(nil, result, ctx, ...)
   end,
 }

@@ -52,6 +52,7 @@ if not status_ok then
 end
 
 local actions = require('telescope.actions')
+local icons = require('colorscheme.icons')
 
 -- disable preview binaries
 local previewers = require('telescope.previewers')
@@ -78,8 +79,8 @@ end
 telescope.setup({
   defaults = {
     buffer_previewer_maker = new_maker,
-    prompt_prefix = ' ',
-    selection_caret = ' ',
+    prompt_prefix = icons.magnifying,
+    selection_caret = string.format('%s ', icons.indicator),
     path_display = {
       -- 'smart',
       shorten = {
