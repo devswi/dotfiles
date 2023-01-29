@@ -14,7 +14,7 @@ M.config = function()
         -- opts: any options passed to the view
         -- icon_hl_group: optional hl_group for the icon
         -- title: set to anything or empty string to hide
-        cmdline = { pattern = '^:', icon = icons.terminal, lang = 'vim', title = '' },
+        cmdline = { pattern = '^:', icon = string.format('%s', icons.terminal), lang = 'vim', title = '' },
         search_down = { kind = 'search', pattern = '^/', icon = ' ', lang = 'regex', title = '' },
         search_up = { kind = 'search', pattern = '^%?', icon = ' ', lang = 'regex', title = '' },
         filter = { pattern = '^:%s*!', icon = '$', lang = 'bash', title = '' },

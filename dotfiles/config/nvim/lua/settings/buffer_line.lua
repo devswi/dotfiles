@@ -58,9 +58,9 @@ M.setup = function()
     },
   })
 
-  local keymap = vim.keymap.set
-  keymap('n', '<Tab>', '<CMD>BufferLineCycleNext<CR>', {})
-  keymap('n', '<S-Tab>', '<CMD>BufferLineCyclePrev<CR>', {})
+  -- local keymap = vim.keymap.set
+  -- keymap('n', '<Tab>', '<CMD>BufferLineCycleNext<CR>', {})
+  -- keymap('n', '<S-Tab>', '<CMD>BufferLineCyclePrev<CR>', {})
 end
 
 return M
