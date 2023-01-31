@@ -7,6 +7,7 @@ end
 local with_root_file = function(...)
   local files = { ... }
   return function(utils)
+    utils.root_has_file()
     return utils.root_has_file(files)
   end
 end
@@ -18,6 +19,7 @@ local with_eslint_files = function()
     '.eslintrc.yaml',
     '.eslintrc.yml',
     '.eslintrc.json',
+    '.eslintrc',
   })
 end
 
@@ -30,6 +32,7 @@ local with_prettier_files = function()
     '.prettierrc.cjs',
     'prettier.config.js',
     'prettier.config.cjs',
+    '.prettierrc',
   })
 end
 
@@ -61,24 +64,14 @@ null_ls.setup({
     formatting.rustfmt,
     -- formatting
     -- eslint 和 prettier 的顺序不能反
-    formatting.eslint_d.with({
-      condition = with_eslint_files(),
-    }),
-    formatting.prettier.with({
-      condition = with_prettier_files(),
-    }),
-
-    formatting.deno_fmt,
+    formatting.eslint_d,
+    formatting.prettier,
 
     -- diagnostics
-    diagnostics.eslint_d.with({
-      condition = with_eslint_files(),
-    }),
+    diagnostics.eslint_d,
 
     -- code actions
-    codeactions.eslint_d.with({
-      condition = with_eslint_files(),
-    }),
+    codeactions.eslint_d,
     codeactions.gitsigns,
   },
   on_attach = function(client, bufnr)

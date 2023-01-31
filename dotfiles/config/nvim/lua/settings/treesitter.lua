@@ -40,7 +40,6 @@ configs.setup({
     enable_autocmd = false,
     config = {
       -- Languages that have a single comment style
-      typescript = '// %s',
       css = '/* %s */',
       scss = '/* %s */',
       html = '<!-- %s -->',
