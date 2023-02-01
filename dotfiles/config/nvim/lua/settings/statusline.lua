@@ -109,13 +109,24 @@ require('lualine').setup({
           return icons.ghost .. ' ' .. str
         end,
       },
+      {
+        require('noice').api.status.mode.get,
+        cond = require('noice').api.status.mode.has,
+        color = { bg = '#73daca', fg = '#24283b' },
+        fmt = function(str)
+          return icons.flame .. '' .. str
+        end,
+      },
     },
     lualine_b = {
       { 'branch', icon = '' },
       diff,
     },
     lualine_c = file_name,
-    lualine_x = { diagnostics, lsp_tbl },
+    lualine_x = {
+      diagnostics,
+      lsp_tbl,
+    },
     lualine_y = {
       {
         'fileformat',
