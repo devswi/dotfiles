@@ -114,7 +114,10 @@ require('lualine').setup({
         cond = require('noice').api.status.mode.has,
         color = { bg = '#73daca', fg = '#24283b' },
         fmt = function(str)
-          return icons.flame .. '' .. str
+          if str:find('recording') then
+            return icons.flame .. '' .. str:gsub('^--(.+)--(.+)', '%0')
+          end
+          return ''
         end,
       },
     },
