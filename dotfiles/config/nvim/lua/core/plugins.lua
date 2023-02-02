@@ -107,6 +107,7 @@ return packer.startup(function()
         end,
         after = 'nvim-lspconfig',
       },
+      { 'hrsh7th/cmp-nvim-lsp-signature-help' },
     },
   })
 

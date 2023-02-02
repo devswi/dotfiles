@@ -109,7 +109,7 @@ M.config = function()
         opts = {}, -- merged with defaults from documentation
       },
       signature = {
-        enabled = true,
+        enabled = false,
         auto_open = {
           enabled = true,
           trigger = true, -- Automatically show signature help when typing a trigger character from the LSP
@@ -117,7 +117,9 @@ M.config = function()
           throttle = 50, -- Debounce lsp signature help request by 50ms
         },
         view = nil, -- when nil, use defaults from documentation
-        opts = {}, -- merged with defaults from documentation
+        opts = {
+          relative = 'cursor',
+        }, -- merged with defaults from documentation
       },
       message = {
         -- Messages shown by lsp servers
@@ -129,6 +131,7 @@ M.config = function()
       documentation = {
         view = 'hover',
         opts = {
+          relative = 'cursor',
           lang = 'markdown',
           replace = true,
           render = 'plain',
@@ -167,7 +170,7 @@ M.config = function()
       command_palette = true, -- position the cmdline and popupmenu together
       long_message_to_split = false, -- long messages will be sent to a split
       inc_rename = false, -- enables an input dialog for inc-rename.nvim
-      lsp_doc_border = true, -- add a border to hover docs and signature help
+      lsp_doc_border = false, -- add a border to hover docs and signature help
     },
     views = {
       split = {
@@ -194,7 +197,6 @@ M.config = function()
           height = 10,
         },
         border = {
-          style = 'rounded',
           padding = { 0, 1 },
         },
         win_options = {

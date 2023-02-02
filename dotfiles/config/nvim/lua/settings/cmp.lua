@@ -46,6 +46,7 @@ M.setup = function()
           return require('cmp').lsp.CompletionItemKind.Snippet ~= entry:get_kind()
         end,
       },
+      { name = 'nvim_lsp_signature_help', priority = 90 },
       { name = 'luasnip', priority = 85 },
       { name = 'nvim_lua', priority = 80 },
       { name = 'path', priority = 10 },
