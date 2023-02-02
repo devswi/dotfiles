@@ -39,12 +39,17 @@ M.setup = function()
       entries = { name = 'custom', selection_order = 'near_cursor' },
     },
     sources = {
-      { name = 'nvim_lsp', priority = 99 },
-      { name = 'luasnip', priority = 90 },
+      {
+        name = 'nvim_lsp',
+        priority = 99,
+        entry_filter = function(entry)
+          return require('cmp').lsp.CompletionItemKind.Snippet ~= entry:get_kind()
+        end,
+      },
+      { name = 'luasnip', priority = 85 },
       { name = 'nvim_lua', priority = 80 },
       { name = 'path', priority = 10 },
       { name = 'buffer', priority = 0 },
-      { name = 'crates', priority = 90 },
     },
     duplicates = {
       buffer = 1,

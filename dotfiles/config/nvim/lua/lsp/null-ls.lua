@@ -4,44 +4,12 @@ if not null_ls_status_ok then
   return
 end
 
-local with_root_file = function(...)
-  local files = { ... }
-  return function(utils)
-    utils.root_has_file()
-    return utils.root_has_file(files)
-  end
-end
-
-local with_eslint_files = function()
-  return with_root_file({
-    '.eslintrc.js',
-    '.eslintrc.cjs',
-    '.eslintrc.yaml',
-    '.eslintrc.yml',
-    '.eslintrc.json',
-    '.eslintrc',
-  })
-end
-
-local with_prettier_files = function()
-  return with_root_file({
-    '.prettierrc.json',
-    '.prettierrc.yml',
-    '.prettierrc.yaml',
-    '.prettierrc.js',
-    '.prettierrc.cjs',
-    'prettier.config.js',
-    'prettier.config.cjs',
-    '.prettierrc',
-  })
-end
-
 -- https://github.com/jose-elias-alvarez/null-ls.nvim/tree/main/lua/null-ls/builtins/formatting
 local formatting = null_ls.builtins.formatting
 -- https://github.com/jose-elias-alvarez/null-ls.nvim/tree/main/lua/null-ls/builtins/diagnostics
 local diagnostics = null_ls.builtins.diagnostics
 
--- local completion = null_ls.builtins.completion
+local completion = null_ls.builtins.completion
 
 local codeactions = null_ls.builtins.code_actions
 
@@ -60,6 +28,8 @@ end
 null_ls.setup({
   debug = false,
   sources = {
+    completion.luasnip,
+
     formatting.stylua,
     formatting.rustfmt,
     -- formatting
