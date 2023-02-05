@@ -37,65 +37,20 @@ M.setup = function()
 
   vim.diagnostic.config(diagnostic_config)
 
-  -- vim.lsp.handlers['textDocument/hover'] = function(_, result, ctx, config)
-  --   config = config or {
-  --     border = 'single',
-  --   }
-  --   config.focus_id = ctx.method
-  --   if not (result and result.contents) then
-  --     return
-  --   end
-  --
-  --   local markdown_lines = vim.lsp.util.convert_input_to_markdown_lines(result.contents)
-  --   markdown_lines = vim.lsp.util.trim_empty_lines(markdown_lines)
-  --   if vim.tbl_isempty(markdown_lines) then
-  --     return
-  --   end
-  --
-  --   local new = {}
-  --   for _, line in pairs(markdown_lines) do
-  --     line = line:gsub('(\\)(%p)', '%2')
-  --     if line:find('&nbsp;') then
-  --       line = line:gsub('&nbsp;', ' ')
-  --     end
-  --     if line:find('&lt;') then
-  --       line = line:gsub('&lt;', '<')
-  --     end
-  --     if line:find('&gt;') then
-  --       line = line:gsub('&gt;', '>')
-  --     end
-  --     if line:find('<pre>') then
-  --       line = line:gsub('<pre>', '```')
-  --     end
-  --     if line:find('</pre>') then
-  --       line = line:gsub('</pre>', '```')
-  --     end
-  --     if #line > 0 then
-  --       table.insert(new, line)
-  --     end
-  --     print(line)
-  --   end
-  --
-  --   local bufnr, window = vim.lsp.util.open_floating_preview(new, nil, config)
-  --   vim.treesitter.start(bufnr, 'markdown')
-  --
-  --   local title = string.format('%%#HoverTitle# %s %s ', icons.kind_icons.File, 'Document')
-  --
-  --   vim.wo[window].conceallevel = 1
-  --   vim.wo[window].concealcursor = 'ni'
-  --   vim.wo[window].showbreak = 'NONE'
-  --   vim.wo[window].winbar = table.concat({ title, '%#Normal# ' }, '')
-  --
-  --   local win_config = vim.api.nvim_win_get_config(window)
-  --   vim.api.nvim_win_set_config(window, {
-  --     height = win_config.height + 1,
-  --     width = math.max(win_config.width, 8), -- + 2 for border
-  --   })
-  --   return bufnr, window
-  -- end
-
   vim.lsp.handlers['textDocument/signatureHelp'] = vim.lsp.with(vim.lsp.handlers.signature_help, {
     border = 'rounded',
+  })
+end
+
+-- if you want to set up formatting on save, you can use this as a callback
+local augroup = vim.api.nvim_create_augroup('LspFormatting', {})
+local lsp_formatting = function(bufnr)
+  vim.lsp.buf.format({
+    filter = function(client)
+      -- apply whatever logic you want (in this example, we'll only use null-ls)
+      return client.name == 'null-ls'
+    end,
+    bufnr = bufnr,
   })
 end
 
@@ -122,6 +77,19 @@ M.on_attach = function(client, bufnr)
   keymap('n', 'K', require('noice.lsp').hover, opts)
   keymap('n', '[d', vim.diagnostic.goto_prev, opts)
   keymap('n', ']d', vim.diagnostic.goto_next, opts)
+
+  if client.supports_method('textDocument/formatting') then
+    vim.api.nvim_clear_autocmds({ group = augroup, buffer = bufnr })
+    vim.api.nvim_create_autocmd('BufWritePre', {
+      group = augroup,
+      buffer = bufnr,
+      callback = function()
+        lsp_formatting(bufnr)
+        -- on 0.8, you should use vim.lsp.buf.format({ bufnr = bufnr }) instead
+        --[[ vim.lsp.buf.format({ async = false }) ]]
+      end,
+    })
+  end
 end
 
 local capabilities = require('cmp_nvim_lsp').default_capabilities()

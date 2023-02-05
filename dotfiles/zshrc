@@ -57,3 +57,4 @@ source <(kubectl completion zsh)
 export PNPM_HOME="/Users/shiwei/Library/pnpm"
 export PATH="$PNPM_HOME:$PATH"
 # pnpm end
+export PATH="/opt/homebrew/opt/openjdk/bin:$PATH"

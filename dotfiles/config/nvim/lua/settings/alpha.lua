@@ -173,7 +173,7 @@ vim.api.nvim_create_autocmd('BufUnload', {
 
 local opts = {
   layout = {
-    { type = 'padding', val = 3 },
+    { type = 'padding', val = 2 },
     section.header,
     { type = 'padding', val = 2 },
     section.greetHeading,

@@ -47,6 +47,7 @@ M.setup = function()
         end,
       },
       { name = 'nvim_lsp_signature_help', priority = 90 },
+      { name = 'crates', priority = 90 },
       { name = 'luasnip', priority = 85 },
       { name = 'nvim_lua', priority = 80 },
       { name = 'path', priority = 10 },
@@ -131,7 +132,6 @@ M.setup = function()
     mapping = cmp.mapping.preset.cmdline(),
     sources = cmp.config.sources({
       { name = 'path' },
-    }, {
       { name = 'cmdline' },
     }),
   })

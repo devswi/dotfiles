@@ -22,6 +22,7 @@ configs.setup({
     'ruby',
     'scss',
     'tsx',
+    'dart',
     'typescript',
     'rust',
     'vim',

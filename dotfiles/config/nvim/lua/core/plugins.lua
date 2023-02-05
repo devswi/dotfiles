@@ -99,6 +99,10 @@ return packer.startup(function()
       { 'williamboman/mason.nvim' },
       { 'williamboman/mason-lspconfig.nvim' },
       { 'simrat39/rust-tools.nvim' },
+      {
+        'akinsho/flutter-tools.nvim',
+        config = require('lsp.servers.dart').setup,
+      },
       { 'jose-elias-alvarez/typescript.nvim' },
       {
         'jose-elias-alvarez/null-ls.nvim',
