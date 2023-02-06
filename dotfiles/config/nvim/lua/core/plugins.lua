@@ -268,9 +268,9 @@ return packer.startup(function()
   --
   use({
     'rcarriga/nvim-notify',
-    -- config = function()
-    -- require('settings.notify')
-    -- end,
+    config = function()
+      require('settings.notify')
+    end,
     after = require('config').theme,
   })
 
@@ -340,7 +340,6 @@ return packer.startup(function()
 
   use({
     'mfussenegger/nvim-dap',
-    disable = true,
     requires = {
       {
         'rcarriga/nvim-dap-ui', -- ui for nvim-dap
@@ -371,17 +370,10 @@ return packer.startup(function()
   })
 
   use({
-    'shiwei93/noice.nvim',
-    branch = 'chore/ignore-no-information-available-notify',
-    config = require('settings.noice_setting').config,
-    requires = {
-      { 'MunifTanjim/nui.nvim' },
-    },
-  })
-
-  use({
-    'weilbith/nvim-code-action-menu',
-    cmd = 'CodeActionMenu',
+    'glepnir/lspsaga.nvim',
+    config = require('settings.lspsaga_setting').setup,
+    event = 'BufRead',
+    requires = { { 'nvim-tree/nvim-web-devicons' } },
   })
 
   -- ZenMode

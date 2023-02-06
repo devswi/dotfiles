@@ -73,7 +73,7 @@ local noremal_mode_mappings = {
     },
     o = { "<cmd>lua require('telescope.builtin').oldfiles()<cr>", 'Old Files' },
     g = { "<cmd>lua require('telescope.builtin').live_grep()<cr>", 'Live Grep' },
-    r = { "<cmd>lua require'telescope'.extensions.file_browser.file_browser()<cr>", 'File Browser' },
+    r = { "<cmd>lua require('telescope').extensions.file_browser.file_browser()<cr>", 'File Browser' },
   },
   g = {
     name = 'Git',

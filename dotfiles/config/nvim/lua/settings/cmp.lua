@@ -162,6 +162,7 @@ M.setup = function()
       'rust',
       'shell',
       'vue',
+      'dart',
     },
   })
 

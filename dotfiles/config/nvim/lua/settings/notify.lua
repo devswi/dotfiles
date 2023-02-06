@@ -7,7 +7,7 @@ end
 local notify_renders = require('notify.render')
 
 vim.notify = function(msg, ...)
-  notify(string.format('%s aksdajskdjalskdjlakjsd', msg), ...)
+  notify(string.format('%s', msg), ...)
 end
 notify.setup({
   -- Animation style (see below for details)

@@ -13,14 +13,18 @@ local function keymappings(client, bufnr)
       },
       R = { '<cmd>Telescope lsp_references<CR>', 'References' },
       a = {
-        '<cmd>CodeActionMenu<CR>',
+        '<cmd>Lspsaga code_action<CR>',
         'Code Action',
       },
-      d = {
+      f = {
+        "<cmd>lua require('telescope').extensions.flutter.commands()<cr>",
+        'Flutter Tools',
+      },
+      t = {
         '<cmd>TroubleToggle document_diagnostics<CR>',
         'Diagnostics',
       },
-      D = {
+      T = {
         '<cmd>TroubleToggle workspace_diagnostics<CR>',
         'All Disgnostics',
       },
@@ -38,19 +42,30 @@ local function keymappings(client, bufnr)
       -- },
     },
   }
-  if client.server_capabilities.documentFormattingProvider then
-    keymap_l.l.f = { '<cmd>lua vim.lsp.buf.format({ async = true })<CR>', 'Format Document' }
-  end
+  local keymap_t = {
+    t = {
+      name = 'Trouble',
+      t = {
+        '<cmd>TroubleToggle document_diagnostics<CR>',
+        'Diagnostics',
+      },
+      T = {
+        '<cmd>TroubleToggle workspace_diagnostics<CR>',
+        'All Disgnostics',
+      },
+    },
+  }
 
   local keymap_v_l = {
     l = {
       name = 'LSP',
-      a = { "<cmd>'<,'>lua vim.lsp.buf.range_code_action()<CR>", 'Code Action' },
+      a = { '<cmd>Lspsaga code_action<CR>', 'Code Action' },
     },
   }
 
   local opt = { buffer = bufnr, prefix = '<leader>' }
   whichkey.register(keymap_l, opt)
+  whichkey.register(keymap_t, opt)
 
   opt = { mode = 'v', buffer = bufnr, prefix = '<leader>' }
   whichkey.register(keymap_v_l, opt)

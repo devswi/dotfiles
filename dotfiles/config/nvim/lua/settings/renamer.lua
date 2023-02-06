@@ -43,9 +43,9 @@ M.setup = function()
     handler = function() end,
   })
 
-  vim.keymap.set('i', '<F2>', "<cmd>lua require('renamer').rename()<CR>", { noremap = true, silent = true })
-  vim.keymap.set('n', 'gr', "<cmd>lua require('renamer').rename()<CR>", { noremap = true, silent = true })
-  vim.keymap.set('v', 'gr', "<cmd>lua require('renamer').rename()<CR>", { noremap = true, silent = true })
+  vim.keymap.set('i', '<F2>', '<cmd>Lspsaga rename<CR>', { noremap = true, silent = true })
+  vim.keymap.set('n', 'gr', '<cmd>Lspsaga rename<CR>', { noremap = true, silent = true })
+  vim.keymap.set('v', 'gr', '<cmd>Lspsaga rename<CR>', { noremap = true, silent = true })
 end
 
 return M

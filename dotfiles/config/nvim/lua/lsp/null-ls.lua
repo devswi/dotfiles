@@ -25,6 +25,9 @@ null_ls.setup({
     formatting.eslint_d,
     formatting.prettier,
 
+    formatting.swiftformat,
+    formatting.ktlint,
+
     -- diagnostics
     diagnostics.eslint_d,
 

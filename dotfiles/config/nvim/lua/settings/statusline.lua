@@ -96,7 +96,8 @@ require('lualine').setup({
         'packer',
         'floaterm',
         'dap-repl',
-        'dapui_scopes',
+        'dapui',
+        'dapui_watches',
       },
     },
     always_divide_middle = true,
@@ -107,17 +108,6 @@ require('lualine').setup({
         'mode',
         fmt = function(str)
           return icons.ghost .. ' ' .. str
-        end,
-      },
-      {
-        require('noice').api.status.mode.get,
-        cond = require('noice').api.status.mode.has,
-        color = { bg = '#73daca', fg = '#24283b' },
-        fmt = function(str)
-          if str:find('recording') then
-            return icons.flame .. '' .. str:gsub('^--(.+)--(.+)', '%0')
-          end
-          return ''
         end,
       },
     },
@@ -181,6 +171,14 @@ require('lualine').setup({
         cond = navic.is_available,
       },
     },
+  },
+  inactive_winbar = {
+    lualine_a = {},
+    lualine_b = {},
+    lualine_c = { 'filename' },
+    lualine_x = {},
+    lualine_y = {},
+    lualine_z = {},
   },
   extensions = {
     'nvim-tree',
