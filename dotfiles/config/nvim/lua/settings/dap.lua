@@ -1,28 +1,29 @@
 local M = {}
 
 local function configuration()
+  local icons = require('colorscheme.icons')
   local dap_breakpoint = {
-    error = {
-      text = '',
-      texthl = 'LspDiagnosticsSignError',
+    breakpoint = {
+      text = icons.debugger.breakpoint,
+      texthl = 'DiagnosticSignError',
       linehl = '',
       numhl = '',
     },
     rejected = {
-      text = '',
-      texthl = 'LspDiagnosticsSignHint',
+      text = icons.debug,
+      texthl = 'DiagnosticSignError',
       linehl = '',
       numhl = '',
     },
     stopped = {
-      text = '',
-      texthl = 'LspDiagnosticsSignInformation',
-      linehl = 'DiagnosticUnderlineInfo',
-      numhl = 'LspDiagnosticsSignInformation',
+      text = icons.debugger.stopped,
+      texthl = 'DiagnosticSignWarn',
+      linehl = 'Visual',
+      numhl = 'DiagnosticSignWarn',
     },
   }
 
-  vim.fn.sign_define('DapBreakpoint', dap_breakpoint.error)
+  vim.fn.sign_define('DapBreakpoint', dap_breakpoint.breakpoint)
   vim.fn.sign_define('DapStopped', dap_breakpoint.stopped)
   vim.fn.sign_define('DapBreakpointRejected', dap_breakpoint.rejected)
 end
@@ -33,7 +34,34 @@ local function configure_exts()
   })
 
   local dap, dapui = require('dap'), require('dapui')
-  dapui.setup() -- use default
+  dapui.setup({
+    expand_lines = true,
+    windows = { indent = 1 },
+    render = {
+      max_type_length = nil,
+      max_value_lines = 100,
+    },
+    layouts = {
+      {
+        elements = {
+          { id = 'scopes', size = 0.33 },
+          { id = 'stacks', size = 0.25 },
+          { id = 'breakpoints', size = 0.17 },
+          { id = 'watches', size = 0.25 },
+        },
+        size = 0.25,
+        position = 'left',
+      },
+      {
+        elements = {
+          { id = 'repl', size = 0.45 },
+          { id = 'console', size = 0.55 },
+        },
+        size = 0.25,
+        position = 'bottom',
+      },
+    },
+  })
   dap.listeners.after.event_initialized['dapui_config'] = function()
     dapui.open({})
   end

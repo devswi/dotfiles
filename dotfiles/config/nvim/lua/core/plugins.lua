@@ -65,7 +65,7 @@ return packer.startup(function()
       { 'nvim-telescope/telescope-rg.nvim' },
       'cljoly/telescope-repo.nvim',
       'nvim-telescope/telescope-file-browser.nvim',
-      { 'nvim-telescope/telescope-dap.nvim', disable = true },
+      { 'nvim-telescope/telescope-dap.nvim' },
     },
     config = function()
       require('settings.telescope')

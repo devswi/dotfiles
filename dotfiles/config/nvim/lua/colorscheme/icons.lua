@@ -21,7 +21,7 @@ local icons = {
   symlink = '',
   line_number = '',
   debug = ' ',
-  bug = ' ',
+  bug = '',
   flame = ' ',
   check = ' ',
   trace = '✎',
@@ -87,6 +87,10 @@ local icons = {
   terminal = ' ',
   magnifying = ' ',
   indicator = '',
+  debugger = {
+    breakpoint = '',
+    stopped = '➜',
+  },
 }
 
 return icons

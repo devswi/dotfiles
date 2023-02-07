@@ -31,7 +31,7 @@ M.setup = function()
       open_cmd = 'tabedit',
     },
     dev_tools = {
-      auto_open_browser = false,
+      auto_open_browser = true,
     },
   })
 end
