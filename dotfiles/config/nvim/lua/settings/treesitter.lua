@@ -15,8 +15,6 @@ configs.setup({
     'javascript',
     'json',
     'json5',
-    'swift',
-    'kotlin',
     'java',
     'python',
     'go',
