@@ -16,6 +16,8 @@ return {
         'typescriptreact',
         'vue',
         'svelte',
+        'css',
+        'less',
       },
       init_options = {
         userLanguages = {
