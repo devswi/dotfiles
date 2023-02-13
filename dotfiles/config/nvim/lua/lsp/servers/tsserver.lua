@@ -56,6 +56,7 @@ local handlers = {
 
 return {
   setup = function(lspconfig, capabilities, on_attach)
+    capabilities.textDocument.completion.completionItem.snippetSupport = true
     require('typescript').setup({
       disable_commands = false,
       debug = false,
