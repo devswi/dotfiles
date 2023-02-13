@@ -62,7 +62,7 @@ return {
         'emmet_ls',
         'tsserver',
         'jsonls',
-        'sumneko_lua',
+        'lua_ls',
         'tailwindcss',
         'rust_analyzer',
         'vuels',

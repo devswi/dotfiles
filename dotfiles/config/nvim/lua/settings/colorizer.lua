@@ -15,4 +15,3 @@ colorizer.setup({ '*' }, {
   css_fn = true,
   mode = 'background',
 })
-
