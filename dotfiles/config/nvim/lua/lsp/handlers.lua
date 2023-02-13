@@ -66,7 +66,7 @@ M.on_attach = function(client, bufnr)
   -- go to definition
   keymap('n', 'gd', vim.lsp.buf.definition, opts)
 
-  keymap('n', 'K', '<cmd>Lspsaga hover_doc<CR>', opts)
+  keymap('n', 'K', '<cmd>Lspsaga hover_doc ++quiet<CR>', opts)
   keymap('n', '[d', vim.diagnostic.goto_prev, opts)
   keymap('n', ']d', vim.diagnostic.goto_next, opts)
 
