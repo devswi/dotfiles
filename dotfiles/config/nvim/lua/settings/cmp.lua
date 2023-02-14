@@ -39,16 +39,16 @@ M.setup = function()
       entries = { name = 'custom', selection_order = 'near_cursor' },
     },
     sources = {
+      { name = 'luasnip', priority = 99 }, -- make snippet first
       {
         name = 'nvim_lsp',
-        priority = 99,
+        priority = 92,
         entry_filter = function(entry)
           return require('cmp').lsp.CompletionItemKind.Snippet ~= entry:get_kind()
         end,
       },
       { name = 'nvim_lsp_signature_help', priority = 90 },
       { name = 'crates', priority = 90 },
-      { name = 'luasnip', priority = 85 },
       { name = 'nvim_lua', priority = 80 },
       { name = 'path', priority = 10 },
       { name = 'buffer', priority = 0 },

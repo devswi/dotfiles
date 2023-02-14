@@ -27,11 +27,17 @@
           "javascriptreact"
         ],
         "path": "./web/react.json"
+      },
+      {
+        "language": [
+          "dart"
+        ],
+        "path": "./dart.json"
       }
     ]
   },
   "engines": {
-    "vscode": "^1.11.0"
+    "vscode": "^1.56.0"
   },
   "name": "nvim-snippets"
 }
