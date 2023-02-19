@@ -348,11 +348,6 @@ return packer.startup(function()
         'theHamsta/nvim-dap-virtual-text', -- virtual text during debugging
       },
       { 'mxsdev/nvim-dap-vscode-js' },
-      {
-        'microsoft/vscode-js-debug',
-        opt = true,
-        run = 'npm install --legacy-peer-deps && npm run compile',
-      },
     },
     config = function()
       require('settings.dap').setup()
@@ -374,6 +369,7 @@ return packer.startup(function()
     config = require('settings.lspsaga_setting').setup,
     event = 'BufRead',
     requires = { { 'nvim-tree/nvim-web-devicons' } },
+    commit = '397201abffa681419a610ecbfd5d3c0fed45d20a',
   })
 
   -- ZenMode
