@@ -11,7 +11,7 @@ font:
     family: 'BlexMono Nerd Font'
     style: 'Light Italic'
   bold_italic:
-    family: 'JetBrainsMono Nerd Font'
+    family: 'BlexMono Nerd Font'
     style: Italic
 
   # 字大小
@@ -25,15 +25,15 @@ font:
     y: 0
 
 window:
-  opacity: 1
+  opacity: 0.999
   padding:
     x: 0
     y: 0
-  startup_mode: Maximized
+  startup_mode: Windowed
   decorations: buttonless
   dimensions:
-    columns: 0
-    lines: 0
+    columns: 120
+    lines: 30
 
 scrolling:
   # 回滚缓冲区中的最大行数,指定“0”将禁用滚动。
@@ -44,6 +44,7 @@ scrolling:
 cursor:
   style:
     shape: Beam
+  blinking: Off
 
 # 如果为‘true’，则使用亮色变体绘制粗体文本。
 draw_bold_text_with_bright_colors: false
