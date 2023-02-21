@@ -157,7 +157,9 @@ require('nvim-tree').setup({ -- BEGIN_DEFAULT_OPTS
     custom = {
       '.DS_Store',
     },
-    exclude = {},
+    exclude = {
+      '.env',
+    },
   },
   filesystem_watchers = {
     enable = true,

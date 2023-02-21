@@ -13,6 +13,7 @@ configs.setup({
     'html',
     'json',
     'javascript',
+    'prisma',
     'json',
     'json5',
     'java',

@@ -44,7 +44,6 @@ end
 
 -- if you want to set up formatting on save, you can use this as a callback
 local augroup = vim.api.nvim_create_augroup('LspFormatting', {})
-local lsp_formatting = function(bufnr) end
 
 M.on_attach = function(client, bufnr)
   local function buf_set_option(...)

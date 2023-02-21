@@ -1,4 +1,3 @@
-
 # 设置字体
 font:
   normal:
@@ -43,8 +42,8 @@ scrolling:
 
 cursor:
   style:
-    shape: Beam
-  blinking: Off
+    blinking: Off
+  blink_interval: 500
 
 # 如果为‘true’，则使用亮色变体绘制粗体文本。
 draw_bold_text_with_bright_colors: false
@@ -152,7 +151,9 @@ schemes:
       magenta: "#bb9af7"
       cyan: "#7dcfff"
       white: "#c0caf5"
-
+    cursor:
+      text: '#333333'
+      cursor: "#fbfbfb"
     indexed_colors:
       - { index: 16, color: "#ff9e64" }
       - { index: 17, color: "#db4b4b" }

@@ -51,6 +51,11 @@ return {
     lspconfig.emmet_ls.setup({
       capabilities = capabilities,
     })
+
+    lspconfig.prismals.setup({
+      on_attach = on_attach,
+      capabilities = capabilities,
+    })
   end,
   setup = function()
     require('mason').setup()
@@ -67,6 +72,7 @@ return {
         'rust_analyzer',
         'vuels',
         'marksman',
+        'prismals',
       },
       automatic_installation = false,
     })

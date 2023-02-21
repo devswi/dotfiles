@@ -30,15 +30,14 @@ null_ls.setup({
   sources = {
     completion.luasnip,
 
+    formatting.prismaFmt,
+
     formatting.stylua,
     formatting.rustfmt,
     -- formatting
     -- eslint 和 prettier 的顺序不能反
     formatting.eslint_d,
     formatting.prettier,
-
-    formatting.swiftformat,
-    formatting.ktlint,
 
     -- diagnostics
     diagnostics.eslint_d,
