@@ -26,10 +26,9 @@ alias vi='nvim'
 alias npm='pnpm'
 
 # dotdrop
-alias dotdrop='dotdrop --cfg=$HOME/Git/dotfiles/config.yaml'
+alias dotdrop='dotdrop --cfg=$HOME/Repos/Github/dotfiles/config.yaml'
 
 export PATH="/opt/homebrew/bin:$PATH"
-export HOMEBREW_BOTTLE_DOMAIN=https://mirrors.aliyun.com/homebrew/homebrew-bottles
 
 # Ruby development
 eval "$(rbenv init -)"
@@ -57,4 +56,5 @@ source <(kubectl completion zsh)
 export PNPM_HOME="/Users/shiwei/Library/pnpm"
 export PATH="$PNPM_HOME:$PATH"
 # pnpm end
+
 export PATH="/opt/homebrew/opt/openjdk/bin:$PATH"

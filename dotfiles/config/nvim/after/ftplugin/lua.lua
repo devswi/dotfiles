@@ -1,6 +1,5 @@
-vim.bo.shiftwidth = 2
-vim.bo.tabstop = 2
-vim.bo.softtabstop = 2
-vim.bo.textwidth = 120
-vim.bo.expandtab = true
-vim.bo.autoindent = true
+local opt = vim.opt
+
+opt.shiftwidth = 2
+opt.tabstop = 2
+opt.softtabstop = 2
