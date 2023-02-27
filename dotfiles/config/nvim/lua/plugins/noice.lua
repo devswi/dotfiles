@@ -11,12 +11,13 @@ return {
     },
     cmdline = {
       enabled = false,
+      view = 'cmdline',
     },
     messages = {
       enabled = false,
     },
     popupmenu = {
-      enabled = true, -- enables the Noice popupmenu UI
+      enabled = false, -- enables the Noice popupmenu UI
       ---@type 'nui'|'cmp'
       backend = 'cmp',
     },
