@@ -6,6 +6,19 @@ return {
       local cmp = require('cmp')
       ---@diagnostic disable-next-line: missing-parameter
       opts.sources = cmp.config.sources(vim.list_extend(opts.sources, { { name = 'cmdline' } }))
+      opts.enabled = function()
+        if
+          require('cmp.config.context').in_treesitter_capture('comment') == true
+          or require('cmp.config.context').in_syntax_group('Comment')
+        then
+          return false
+        else
+          return true
+        end
+      end
+      opts.experimental = {
+        ghost_text = false, -- this feature conflict with copilot.vim's preview.
+      }
     end,
   },
   {

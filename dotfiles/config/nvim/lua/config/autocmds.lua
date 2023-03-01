@@ -12,3 +12,12 @@ vim.api.nvim_create_autocmd('FileType', {
   end,
   group = _ft,
 })
+
+-- disable comment in new line
+vim.api.nvim_create_autocmd('FileType', {
+  pattern = '*',
+  callback = function()
+    vim.bo.formatoptions = 'jqlnt' -- see :help to-table
+  end,
+  group = _ft,
+})
