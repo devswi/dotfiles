@@ -3,9 +3,6 @@ return {
     'hrsh7th/nvim-cmp',
     dependencies = { 'hrsh7th/cmp-cmdline' },
     opts = function(_, opts)
-      local cmp = require('cmp')
-      ---@diagnostic disable-next-line: missing-parameter
-      opts.sources = cmp.config.sources(vim.list_extend(opts.sources, { { name = 'cmdline' } }))
       opts.enabled = function()
         if
           require('cmp.config.context').in_treesitter_capture('comment') == true
@@ -19,6 +16,24 @@ return {
       opts.experimental = {
         ghost_text = false, -- this feature conflict with copilot.vim's preview.
       }
+    end,
+    config = function()
+      local cmp = require('cmp')
+      cmp.setup.cmdline({ '/', '?' }, {
+        mapping = cmp.mapping.preset.cmdline(),
+        sources = {
+          { name = 'buffer' },
+        },
+      })
+
+      cmp.setup.cmdline(':', {
+        mapping = cmp.mapping.preset.cmdline(),
+        sources = cmp.config.sources({
+          { name = 'path' },
+        }, {
+          { name = 'cmdline' },
+        }),
+      })
     end,
   },
   {
