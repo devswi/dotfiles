@@ -12,6 +12,12 @@ return {
   -- flutter
   {
     'akinsho/flutter-tools.nvim',
+    keys = {
+      { '<leader>cc', '<cmd>Telescope flutter commands<cr>', desc = 'Flutter commands list' },
+    },
+    config = function()
+      require('telescope').load_extension('flutter')
+    end,
     opts = {
       debugger = {
         enabled = false,
@@ -24,14 +30,14 @@ return {
           background_color = nil,
           foreground = false,
           virtual_text = true,
-          virtual_text_str = ' ',
+          virtual_text_str = require('resource.icons').color .. ' ',
         },
       },
       widget_guides = {
         enabled = true,
       },
       dev_log = {
-        enabled = false,
+        enabled = true,
         open_cmd = 'tabedit',
       },
       dev_tools = {
