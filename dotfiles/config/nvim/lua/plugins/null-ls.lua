@@ -15,9 +15,9 @@ local with_eslint_files = function()
   return with_root_file('.eslintrc.(js|cjs|yaml|yml|json)')
 end
 
-local with_prettier_files = function()
-  return with_root_file('.prettierrc.(js|cjs|yaml|yml|json)|prettier.config.(js|cjs)')
-end
+-- local with_prettier_files = function()
+--   return with_root_file('.prettierrc.(js|cjs|yaml|yml|json)|prettier.config.(js|cjs)')
+-- end
 
 return {
   'jose-elias-alvarez/null-ls.nvim',
