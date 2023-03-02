@@ -16,8 +16,6 @@ return {
       opts.experimental = {
         ghost_text = false, -- this feature conflict with copilot.vim's preview.
       }
-    end,
-    config = function()
       local cmp = require('cmp')
       cmp.setup.cmdline({ '/', '?' }, {
         mapping = cmp.mapping.preset.cmdline(),
