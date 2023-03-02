@@ -28,12 +28,8 @@ return {
       formatting.rustfmt,
       -- formatting
       -- eslint 和 prettier 的顺序不能反
-      formatting.eslint_d.with({
-        condition = with_eslint_files(),
-      }),
-      formatting.prettier.with({
-        condition = with_prettier_files(),
-      }),
+      formatting.eslint_d,
+      formatting.prettier,
       -- diagnostics
       diagnostics.eslint_d.with({
         condition = with_eslint_files(),
