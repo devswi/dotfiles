@@ -30,5 +30,6 @@ return {
       'yaml',
       'toml',
     },
+    indent = { enable = false },
   },
 }
