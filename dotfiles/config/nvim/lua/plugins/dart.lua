@@ -41,7 +41,6 @@ return {
         },
         dev_log = {
           enabled = true,
-          open_cmd = 'tabedit',
         },
         dev_tools = {
           auto_open_browser = true,
