@@ -4,7 +4,7 @@ return {
   opts = {
     char = '▏',
     context_char = '▏',
-    filetype_exclude = { 'help', 'alpha', 'neo-tree', 'Trouble', 'lazy', 'Outline' },
+    filetype_exclude = { 'help', 'alpha', 'neo-tree', 'Trouble', 'lazy', 'Outline', '' },
     buftype_exclude = { 'terminal' },
     show_first_indent_level = true,
     show_trailing_blankline_indent = false,
