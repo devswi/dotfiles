@@ -26,3 +26,6 @@ keymap('n', '[<space>', 'O<ESC>', opts)
 keymap('n', '<leader>ft', '<Nop>')
 keymap('n', '<leader>fT', '<Nop>', { desc = 'Terminal (cwd)' })
 keymap('t', '<esc><esc>', '<c-\\><c-n>', { desc = 'Enter Normal Mode' })
+
+keymap('n', '<leader>gg', '<Nop>')
+keymap('n', '<leader>gG', '<Nop>')
