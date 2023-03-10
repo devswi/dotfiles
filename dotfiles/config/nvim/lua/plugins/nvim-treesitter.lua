@@ -30,5 +30,11 @@ return {
       'yaml',
       'toml',
     },
+    highlight = {
+      enable = true,
+      disable = {
+        'vue',
+      },
+    },
   },
 }
