@@ -32,9 +32,7 @@ return {
     },
     highlight = {
       enable = true,
-      disable = {
-        'vue',
-      },
+      disable = {},
     },
   },
 }
