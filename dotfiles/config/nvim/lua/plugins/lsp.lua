@@ -41,14 +41,9 @@ return {
         emmet_ls = {
           filetypes = {
             'html',
-            'css',
-            'javascript',
             'javascriptreact',
-            'typescript',
             'typescriptreact',
             'vue',
-            'sass',
-            'scss',
           },
         },
         volar = {
@@ -73,11 +68,6 @@ return {
         },
       },
     },
-    setup = {
-      volar = function(_, opts)
-        print(opts)
-      end,
-    },
   },
   {
     'NvChad/nvim-colorizer.lua',
@@ -89,10 +79,10 @@ return {
         names = true, -- "Name" codes like Blue or blue
         RRGGBBAA = true, -- #RRGGBBAA hex codes
         AARRGGBB = true, -- 0xAARRGGBB hex codes
-        rgb_fn = false, -- CSS rgb() and rgba() functions
-        hsl_fn = false, -- CSS hsl() and hsla() functions
-        css = false, -- Enable all CSS features: rgb_fn, hsl_fn, names, RGB, RRGGBB
-        css_fn = false,
+        rgb_fn = true, -- CSS rgb() and rgba() functions
+        hsl_fn = true, -- CSS hsl() and hsla() functions
+        css = true, -- Enable all CSS features: rgb_fn, hsl_fn, names, RGB, RRGGBB
+        css_fn = true,
       },
     },
   },
