@@ -27,7 +27,17 @@ return {
             },
           },
         },
-        tailwindcss = {},
+        tailwindcss = {
+          root_dir = function(fname)
+            local util = require('lspconfig').util
+            return util.root_pattern(
+              'tailwind.config.js',
+              'tailwind.config.ts',
+              'postcss.config.js',
+              'postcss.config.ts'
+            )(fname)
+          end,
+        },
         emmet_ls = {
           filetypes = {
             'html',
@@ -54,7 +64,7 @@ return {
             local vue_root = util.root_pattern('vite.config.ts', 'vite.config.js')(fname)
             return not vue_root
               and (
-                util.root_pattern('package.json', 'tsconfig.json', 'jsconfig.json', '.git')(fname)
+                util.root_pattern('tsconfig.json', 'jsconfig.json', '.git')(fname)
                 or util.find_git_ancestor(fname)
                 or vim.loop.os_homedir()
               )
