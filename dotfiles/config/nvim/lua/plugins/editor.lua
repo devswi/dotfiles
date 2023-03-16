@@ -4,7 +4,8 @@ return {
     dependencies = { 'hrsh7th/cmp-cmdline' },
     opts = function(_, opts)
       opts.enabled = function()
-        if vim.bo.filetype == 'neo-tree-popup' then
+        local filetype = vim.bo.filetype
+        if filetype == 'neo-tree-popup' or filetype == 'TelescopePrompt' then
           return false
         end
         if
