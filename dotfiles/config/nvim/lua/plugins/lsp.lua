@@ -13,29 +13,16 @@ return {
     'neovim/nvim-lspconfig',
     opts = {
       servers = {
-        cssls = {
-          settings = {
-            css = {
-              lint = {
-                unknownAtRules = 'ignore',
-              },
-            },
-            scss = {
-              lint = {
-                unknownAtRules = 'ignore',
-              },
-            },
-          },
-        },
         tailwindcss = {
           root_dir = function(fname)
             local util = require('lspconfig').util
-            return util.root_pattern(
+            local tailwind_available = util.root_pattern(
               'tailwind.config.js',
               'tailwind.config.ts',
               'postcss.config.js',
               'postcss.config.ts'
             )(fname)
+            return tailwind_available
           end,
         },
         emmet_ls = {
@@ -59,7 +46,7 @@ return {
             local vue_root = util.root_pattern('vite.config.ts', 'vite.config.js')(fname)
             return not vue_root
               and (
-                util.root_pattern('tsconfig.json', 'jsconfig.json', '.git')(fname)
+                util.root_pattern('tsconfig.json', 'jsconfig.json')(fname)
                 or util.find_git_ancestor(fname)
                 or vim.loop.os_homedir()
               )

@@ -3,7 +3,6 @@ return {
   opts = {
     ensure_installed = {
       'bash-language-server',
-      'css-lsp',
       'html-lsp',
       'emmet-ls',
       'tailwindcss-language-server',
