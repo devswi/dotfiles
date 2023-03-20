@@ -13,6 +13,21 @@ return {
     'neovim/nvim-lspconfig',
     opts = {
       servers = {
+        cssls = {
+          settings = {
+            css = {
+              validate = false,
+              lint = {
+                unknownAtRules = 'ignore',
+              },
+            },
+            scss = {
+              lint = {
+                unknownAtRules = 'ignore',
+              },
+            },
+          },
+        },
         tailwindcss = {
           root_dir = function(fname)
             local util = require('lspconfig').util
