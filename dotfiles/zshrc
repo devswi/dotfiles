@@ -23,7 +23,7 @@ alias vim='nvim'
 alias vi='nvim'
 
 # npm -> pnpm
-alias npm='pnpm'
+# alias npm='pnpm'
 
 # dotdrop
 alias dotdrop='dotdrop --cfg=$HOME/Repos/Github/dotfiles/config.yaml'

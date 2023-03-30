@@ -5,15 +5,15 @@ local formatting = builtins.formatting
 local diagnostics = builtins.diagnostics
 local codeactions = builtins.code_actions
 
-local with_root_file = function(regex)
-  return function(utils)
-    return utils.root_matches(regex)
-  end
-end
+-- local with_root_file = function(regex)
+--   return function(utils)
+--     return utils.root_matches(regex)
+--   end
+-- end
 
-local with_eslint_files = function()
-  return with_root_file('.eslintrc.(js|cjs|yaml|yml|json)')
-end
+-- local with_eslint_files = function()
+--   return with_root_file('.eslintrc.(js|cjs|yaml|yml|json)')
+-- end
 
 -- local with_prettier_files = function()
 --   return with_root_file('.prettierrc.(js|cjs|yaml|yml|json)|prettier.config.(js|cjs)')
@@ -31,9 +31,7 @@ return {
       formatting.eslint_d,
       formatting.prettier,
       -- diagnostics
-      diagnostics.eslint_d.with({
-        condition = with_eslint_files(),
-      }),
+      diagnostics.eslint_d,
       -- code actions
       codeactions.eslint_d,
       codeactions.gitsigns,
