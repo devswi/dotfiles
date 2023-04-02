@@ -32,7 +32,9 @@ return {
     opts = function()
       require('which-key').register({
         ['<leader>j'] = {
-          name = '+Movement',
+          name = '+movement',
+          j = { '<cmd>HopWord<cr>', 'move word' },
+          l = { '<cmd>HopLine<cr>', 'move line' },
         },
       })
     end,

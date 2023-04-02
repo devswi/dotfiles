@@ -49,10 +49,6 @@ return {
   {
     'phaazon/hop.nvim',
     branch = 'v2',
-    keys = {
-      { '<leader>jj', '<cmd>HopWord<cr>', desc = 'Jump word' },
-      { '<leader>jl', '<cmd>HopLine<cr>', desc = 'Jump line' },
-    },
     config = function()
       require('hop').setup({ keys = 'etovxqpdygfblzhckisuran' })
       local hop = require('hop')
