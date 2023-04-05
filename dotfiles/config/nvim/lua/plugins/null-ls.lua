@@ -5,19 +5,15 @@ local formatting = builtins.formatting
 local diagnostics = builtins.diagnostics
 local codeactions = builtins.code_actions
 
--- local with_root_file = function(regex)
---   return function(utils)
---     return utils.root_matches(regex)
---   end
--- end
-
--- local with_eslint_files = function()
---   return with_root_file('.eslintrc.(js|cjs|yaml|yml|json)')
--- end
-
--- local with_prettier_files = function()
---   return with_root_file('.prettierrc.(js|cjs|yaml|yml|json)|prettier.config.(js|cjs)')
--- end
+local prettier_files = {
+  '.prettierrc.js',
+  '.prettierrc.cjs',
+  '.prettierrc.yaml',
+  '.prettierrc.yml',
+  '.prettierrc.json',
+  'prettier.config.js',
+  'prettier.config.cjs',
+}
 
 return {
   'jose-elias-alvarez/null-ls.nvim',
@@ -29,7 +25,11 @@ return {
       -- formatting
       -- eslint 和 prettier 的顺序不能反
       formatting.eslint_d,
-      formatting.prettier,
+      formatting.prettier.with({
+        condition = function(utils)
+          return utils.has_file(prettier_files)
+        end,
+      }),
       -- diagnostics
       diagnostics.eslint_d,
       -- code actions
