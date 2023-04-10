@@ -8,9 +8,10 @@ return {
       'emmet-ls',
       'tailwindcss-language-server',
       'rust-analyzer',
-      'vue-language-server',
+      'vue-language-server', -- volar for vue3.x
       'marksman',
       'prisma-language-server',
+      'vetur-vls', -- vue2.x
     },
   },
 }

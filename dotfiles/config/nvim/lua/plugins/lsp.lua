@@ -43,7 +43,8 @@ return {
               'tailwind.config.js',
               'tailwind.config.ts',
               'postcss.config.js',
-              'postcss.config.ts'
+              'postcss.config.ts',
+              '.postcssrc.js'
             )(fname)
             return tailwind_available
           end,
@@ -60,13 +61,19 @@ return {
           filetypes = { 'vue', 'javascript', 'javascriptreact', 'typescript', 'typescriptreact', 'json' },
           root_dir = function(fname)
             local util = require('lspconfig').util
-            return util.root_pattern('vite.config.ts', 'vite.config.js', 'vue.config.js')(fname)
+            return util.root_pattern('vite.config.ts', 'vite.config.js')(fname)
+          end,
+        },
+        vuels = {
+          root_dir = function(fname)
+            local util = require('lspconfig').util
+            return util.root_pattern('vue.config.js')(fname)
           end,
         },
         tsserver = {
           root_dir = function(fname)
             local util = require('lspconfig').util
-            local vue_root = util.root_pattern('vite.config.ts', 'vite.config.js', 'vue.config.js')(fname)
+            local vue_root = util.root_pattern('vite.config.ts', 'vite.config.js')(fname)
             return not vue_root
               and (
                 util.root_pattern('tsconfig.json', 'jsconfig.json')(fname)
