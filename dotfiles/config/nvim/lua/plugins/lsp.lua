@@ -69,6 +69,48 @@ return {
             local util = require('lspconfig').util
             return util.root_pattern('vue.config.js')(fname)
           end,
+          init_options = {
+            config = {
+              css = {},
+              emmet = {},
+              html = {
+                suggest = {},
+              },
+              javascript = {
+                format = {},
+              },
+              stylusSupremacy = {},
+              typescript = {
+                format = {},
+              },
+              vetur = {
+                experimental = {
+                  templateInterpolationService = true,
+                },
+                completion = {
+                  autoImport = true,
+                  tagCasing = 'kebab',
+                  useScaffoldSnippets = false,
+                },
+                format = {
+                  defaultFormatter = {
+                    js = 'none',
+                    ts = 'none',
+                  },
+                  defaultFormatterOptions = {},
+                  scriptInitialIndent = false,
+                  styleInitialIndent = false,
+                },
+                useWorkspaceDependencies = false,
+                validation = {
+                  script = true,
+                  style = true,
+                  template = false,
+                  interpolation = false,
+                },
+              },
+            },
+          },
         },
         tsserver = {
           root_dir = function(fname)
@@ -93,7 +135,7 @@ return {
         tailwind = true,
         RGB = true, -- #RGB hex codes
         RRGGBB = true, -- #RRGGBB hex codes
-        names = true, -- "Name" codes like Blue or blue
+        names = false, -- "Name" codes like Blue or blue
         RRGGBBAA = true, -- #RRGGBBAA hex codes
         AARRGGBB = true, -- 0xAARRGGBB hex codes
         rgb_fn = true, -- CSS rgb() and rgba() functions

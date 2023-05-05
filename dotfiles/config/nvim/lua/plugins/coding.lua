@@ -34,7 +34,7 @@ return {
         ['<leader>j'] = {
           name = '+movement',
           j = { '<cmd>HopWord<cr>', 'move word' },
-          l = { '<cmd>HopLine<cr>', 'move line' },
+          l = { '<cmd>HopLineStart<cr>', 'move line' },
         },
       })
     end,
