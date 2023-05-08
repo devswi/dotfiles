@@ -23,4 +23,7 @@ return {
   git = {
     branch = '',
   },
+  indicator = {
+    right = '  ',
+  },
 }

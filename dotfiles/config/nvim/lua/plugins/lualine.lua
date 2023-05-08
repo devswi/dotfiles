@@ -174,7 +174,9 @@ return {
         },
         lualine_b = {
           {
-            navic.get_location,
+            function()
+              return navic.get_location()
+            end,
             cond = navic.is_available,
             color = { bg = '#24283b' },
           },
