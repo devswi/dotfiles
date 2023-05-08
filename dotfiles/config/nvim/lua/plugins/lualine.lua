@@ -119,7 +119,7 @@ return {
           },
         },
         lualine_b = {
-          { 'branch', shorten = true, icon = '' },
+          { 'branch', shorten = true, icon = icons.git.branch },
           diff,
         },
         lualine_c = file_name,

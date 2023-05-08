@@ -33,8 +33,11 @@ return {
       require('which-key').register({
         ['<leader>j'] = {
           name = '+movement',
-          j = { '<cmd>HopWord<cr>', 'move word' },
-          l = { '<cmd>HopLineStart<cr>', 'move line' },
+          c = { '<cmd>HopChar1<cr>', 'char' },
+          C = { '<cmd>HopChar2<cr>', '2 char' },
+          j = { '<cmd>HopWord<cr>', 'word' },
+          l = { '<cmd>HopLine<cr>', 'line' },
+          L = { '<cmd>HopLineStart<cr>', 'line start' },
         },
       })
     end,

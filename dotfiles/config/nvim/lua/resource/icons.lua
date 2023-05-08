@@ -1,23 +1,26 @@
 return {
-  ghost = '',
+  ghost = '󰊠',
   diff = {
     added = '',
     modified = '',
     removed = '',
   },
-  unsave = '',
-  readonly = '',
+  unsave = '󰈙',
+  readonly = '󰈡', -- nf-md-file_lock
   diagnostics = {
     error = '',
     warn = '',
     info = '',
-    hint = '',
+    hint = '󰌵',
   },
-  lsp = '慎',
+  lsp = '󰝴', -- nf-mdi-ninja
   system = {
     unix = '',
     dos = '',
     mac = '',
   },
-  color = '',
+  color = '',
+  git = {
+    branch = '',
+  },
 }
