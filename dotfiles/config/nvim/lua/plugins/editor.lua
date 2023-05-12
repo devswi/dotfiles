@@ -43,6 +43,13 @@ return {
     enabled = false,
   },
   {
+    'iamcco/markdown-preview.nvim',
+    event = 'BufRead',
+    config = function()
+      vim.fn['mkdp#util#install']()
+    end,
+  },
+  {
     'ggandor/leap.nvim',
     enabled = false,
   },
