@@ -12,6 +12,7 @@ return {
       'marksman',
       'prisma-language-server',
       'vetur-vls', -- vue2.x
+      'unocss-language-server',
     },
   },
 }

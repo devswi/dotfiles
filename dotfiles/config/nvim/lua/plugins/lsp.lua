@@ -39,13 +39,7 @@ return {
         tailwindcss = {
           root_dir = function(fname)
             local util = require('lspconfig').util
-            local tailwind_available = util.root_pattern(
-              'tailwind.config.js',
-              'tailwind.config.ts',
-              'postcss.config.js',
-              'postcss.config.ts',
-              '.postcssrc.js'
-            )(fname)
+            local tailwind_available = util.root_pattern('tailwind.config.js', 'tailwind.config.ts')(fname)
             return tailwind_available
           end,
         },
