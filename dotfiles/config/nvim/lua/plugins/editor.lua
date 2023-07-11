@@ -3,6 +3,7 @@ return {
     'hrsh7th/nvim-cmp',
     dependencies = { 'hrsh7th/cmp-cmdline' },
     opts = function(_, opts)
+      local cmp = require('cmp')
       opts.enabled = function()
         local filetype = vim.bo.filetype
         if filetype == 'neo-tree-popup' or filetype == 'TelescopePrompt' then
@@ -20,7 +21,6 @@ return {
       opts.experimental = {
         ghost_text = false, -- this feature conflict with copilot.vim's preview.
       }
-      local cmp = require('cmp')
       cmp.setup.cmdline({ '/', '?' }, {
         mapping = cmp.mapping.preset.cmdline(),
         sources = {
