@@ -27,19 +27,4 @@ return {
       })
     end,
   },
-  {
-    'folke/which-key.nvim',
-    opts = function()
-      require('which-key').register({
-        ['<leader>j'] = {
-          name = '+movement',
-          c = { '<cmd>HopChar1<cr>', 'char' },
-          C = { '<cmd>HopChar2<cr>', '2 char' },
-          j = { '<cmd>HopWord<cr>', 'word' },
-          l = { '<cmd>HopLine<cr>', 'line' },
-          L = { '<cmd>HopLineStart<cr>', 'line start' },
-        },
-      })
-    end,
-  },
 }
