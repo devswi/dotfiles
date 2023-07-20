@@ -39,18 +39,20 @@ return {
     end,
   },
   {
-    'ggandor/flit.nvim',
-    enabled = false,
-  },
-  {
-    'ggandor/leap.nvim',
-    enabled = false,
-  },
-  {
     'iamcco/markdown-preview.nvim',
     event = 'BufRead',
     config = function()
       vim.fn['mkdp#util#install']()
+    end,
+  },
+  {
+    'romgrk/nvim-treesitter-context',
+    event = 'BufRead',
+    config = function()
+      require('treesitter-context').setup({
+        enable = true, -- Enable this plugin (Can be enabled/disabled later via commands)
+        throttle = true, -- Throttles plugin updates (may improve performance)
+      })
     end,
   },
 }
