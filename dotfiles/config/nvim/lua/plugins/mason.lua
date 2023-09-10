@@ -13,6 +13,7 @@ return {
       'prisma-language-server',
       'vetur-vls', -- vue2.x
       'unocss-language-server',
+      'svelte-language-server',
     },
   },
 }

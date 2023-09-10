@@ -29,6 +29,7 @@ return {
       'vue',
       'yaml',
       'toml',
+      'svelte',
     },
     highlight = {
       enable = true,
