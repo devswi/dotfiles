@@ -16,7 +16,7 @@ local prettier_files = {
 }
 
 return {
-  'jose-elias-alvarez/null-ls.nvim',
+  'nvimtools/none-ls.nvim',
   opts = {
     sources = {
       completion.luasnip,
