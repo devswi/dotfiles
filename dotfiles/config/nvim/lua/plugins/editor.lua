@@ -46,7 +46,7 @@ return {
     end,
   },
   {
-    'romgrk/nvim-treesitter-context',
+    'nvim-treesitter/nvim-treesitter',
     event = 'BufRead',
     config = function()
       require('treesitter-context').setup({

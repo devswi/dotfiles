@@ -55,7 +55,7 @@ return {
           filetypes = { 'vue', 'javascript', 'javascriptreact', 'typescript', 'typescriptreact', 'json' },
           root_dir = function(fname)
             local util = require('lspconfig').util
-            return util.root_pattern('vite.config.ts', 'vite.config.js')(fname)
+            return util.root_pattern('vite.config.ts', 'vite.config.js', 'nuxt.config.ts')(fname)
           end,
         },
         vuels = {
