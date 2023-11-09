@@ -1,15 +1,6 @@
 -- flutter language server
 return {
   {
-    'nvim-treesitter/nvim-treesitter',
-    opts = function(_, opts)
-      if type(opts.ensure_installed) == 'table' then
-        ---@diagnostic disable-next-line: missing-parameter
-        vim.list_extend(opts.ensure_installed, { 'dart' })
-      end
-    end,
-  },
-  {
     'akinsho/flutter-tools.nvim',
     config = function()
       require('flutter-tools').setup({

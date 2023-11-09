@@ -22,6 +22,7 @@ return {
       completion.luasnip,
       formatting.stylua,
       formatting.rustfmt,
+      formatting.stylelint,
       -- formatting
       -- eslint 和 prettier 的顺序不能反
       formatting.eslint_d,
@@ -32,6 +33,7 @@ return {
       }),
       -- diagnostics
       diagnostics.eslint_d,
+      diagnostics.stylelint,
       -- code actions
       codeactions.eslint_d,
       codeactions.gitsigns,

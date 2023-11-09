@@ -45,14 +45,4 @@ return {
       vim.fn['mkdp#util#install']()
     end,
   },
-  {
-    'nvim-treesitter/nvim-treesitter',
-    event = 'BufRead',
-    config = function()
-      require('treesitter-context').setup({
-        enable = true, -- Enable this plugin (Can be enabled/disabled later via commands)
-        throttle = true, -- Throttles plugin updates (may improve performance)
-      })
-    end,
-  },
 }
