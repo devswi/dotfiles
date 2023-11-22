@@ -12,14 +12,9 @@ config:
   link_dotfile_default: nolink
   link_on_import: nolink
   longkey: false
+  minversion: 1.14.0
 variables:
   keyid: 9D41FF247926E119
-trans_read:
-  gpg: gpg -q --for-your-eyes-only --no-tty -d {0} > {1}
-  gpgdir: mkdir {1} && gpg -q --for-your-eyes-only --no-tty -d {0} |tar -x -C {1}
-trans_write:
-  gpg: gpg -qaer {{@@ keyid @@}} -o- {0} > {1}
-  gpgdir: tar -c -C {0} . | gpg -qaer {{@@ keyid @@}} -o {1}
 dotfiles:
   f_zshrc:
     src: zshrc
@@ -46,13 +41,13 @@ dotfiles:
     src: ssh
     dst: ~/.ssh
     chmod: '700'
-    trans_read: gpgdir
-    trans_write: gpgdir
+    trans_install: gpgdir
+    trans_update: gpgdir
   f_config:
     src: kube/config
     dst: ~/.kube/config
-    trans_read: gpg
-    trans_write: gpg
+    trans_install: gpg
+    trans_update: gpg
   f_popuptmux.sh:
     src: local/bin/popuptmux.sh
     dst: ~/.local/bin/popuptmux.sh
@@ -68,3 +63,9 @@ profiles:
     - d_ssh
     - f_config
     - f_popuptmux.sh
+trans_install:
+  gpg: gpg -q --for-your-eyes-only --no-tty -d {0} > {1}
+  gpgdir: mkdir {1} && gpg -q --for-your-eyes-only --no-tty -d {0} |tar -x -C {1}
+trans_update:
+  gpg: gpg -qaer {{@@ keyid @@}} -o- {0} > {1}
+  gpgdir: tar -c -C {0} . | gpg -qaer {{@@ keyid @@}} -o {1}
