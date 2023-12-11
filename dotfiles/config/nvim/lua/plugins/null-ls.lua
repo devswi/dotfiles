@@ -33,7 +33,11 @@ return {
       }),
       -- diagnostics
       diagnostics.eslint_d,
-      diagnostics.stylelint,
+      diagnostics.stylelint.with({
+        condition = function(utils)
+          return utils.has_file('.stylelintrc')
+        end,
+      }),
       -- code actions
       codeactions.eslint_d,
       codeactions.gitsigns,
