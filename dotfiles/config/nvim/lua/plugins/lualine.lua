@@ -79,7 +79,6 @@ return {
 
     return {
       options = {
-        theme = 'catppuccin-frappe',
         icons_enbaled = true,
         component_separators = '',
         section_separators = '',
@@ -163,13 +162,13 @@ return {
           {
             'filetype',
             icon_only = true,
-            color = { bg = '#313447' },
+            color = { bg = '#25273b' },
           },
           {
             'filename',
             path = 1,
             file_status = false,
-            color = { bg = '#313447', fg = '#a9b1d6' },
+            color = { bg = '#25273b', fg = '#a9b1d6' },
           },
         },
         lualine_b = {
@@ -178,7 +177,7 @@ return {
               return navic.get_location()
             end,
             cond = navic.is_available,
-            color = { bg = '#313447' },
+            color = { bg = '#25273b' },
           },
         },
       },

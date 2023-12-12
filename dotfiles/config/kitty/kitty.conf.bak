@@ -60,7 +60,7 @@ box_drawing_scale 0.001, 1, 1.5, 2
 
 # Cursor customization {{{
 # The cursor color
-cursor           #c0caf5
+# cursor           #c0caf5
 
 # The cursor shape can be one of (block, beam, underline)
 cursor_shape     block
@@ -94,7 +94,7 @@ wheel_scroll_multiplier 5.0
 # Mouse {{{
 # The color and style for highlighting URLs on mouse-over. url_style can be one of:
 # none, single, double, curly
-url_color #9ece6a
+# url_color #9ece6a
 url_style curly
 
 # The modifier keys to press when clicking with the mouse on URLs to open the URL
@@ -192,10 +192,10 @@ window_margin_width 0
 window_padding_width 2
 
 # The color for the border of the active window
-active_border_color #3d59a1
+# active_border_color #3d59a1
 
 # The color for the border of inactive windows
-inactive_border_color #101014
+# inactive_border_color #101014
 
 # Fade the text in inactive windows by the specified amount (a number between
 # zero and one, with 0 being fully faded).
@@ -215,20 +215,20 @@ tab_bar_edge bottom
 
 # Tab bar colors and styles
 # active_tab_foreground #3d59a1
-active_tab_background #8CAAEE
+# active_tab_background #8CAAEE
 # active_tab_font_style bold-italic
 # inactive_tab_foreground #787c99
-inactive_tab_background #b7caf7
+# inactive_tab_background #b7caf7
 # inactive_tab_font_style normal
 # }}}
 
 
 # Color scheme {{{
 # The foreground color
-foreground       #a9b1d6
+# foreground       #a9b1d6
 
 # The background color
-background       #24283b
+# background       #24283b
 
 # The opacity of the background. A number between 0 and 1, where 1 is opaque and 0 is fully transparent.
 # This will only work if supported by the OS (for instance, when using a compositor under X11). Note
@@ -243,45 +243,45 @@ background       #24283b
 background_opacity 1.0
 
 # The foreground for selections
-selection_foreground none
+# selection_foreground none
 
 # The background for selections
-selection_background #28344a
+# selection_background #28344a
 
 # The 16 terminal colors. There are 8 basic colors, each color has a dull and
 # bright version.
 
 # black
-color0   #414868
-color8   #545c7e
+# color0   #414868
+# color8   #545c7e
 
 # red
-color1   #f7768e
-color9   #db4b4b
+# color1   #f7768e
+# color9   #db4b4b
 
 # green
-color2   #73daca
-color10  #73daca
+# color2   #73daca
+# color10  #73daca
 
 # yellow
-color3   #e0af68
-color11  #e0af68
+# color3   #e0af68
+# color11  #e0af68
 
 # blue
-color4  #2ac3de
-color12 #0db9d7
+# color4  #2ac3de
+# color12 #0db9d7
 
 # magenta
-color5   #bb9af7
-color13  #bb9af7
+# color5   #bb9af7
+# color13  #bb9af7
 
 # cyan
-color6   #7dcfff
-color14  #7dcfff
+# color6   #7dcfff
+# color14  #7dcfff
 
 # white
-color7   #c0caf5
-color15  #ffffff
+# color7   #c0caf5
+# color15  #ffffff
 # }}}
 
 
@@ -399,7 +399,7 @@ map ctrl+shift+0        tenth_window
 # means to use the default system color, a value of "background" means to use
 # the default background color and finally you can use an arbitrary color, such
 # as #12af59 or "red".
-macos_titlebar_color background
+# macos_titlebar_color background
 
 # Hide the kitty window's title bar on macOS.
 macos_hide_titlebar no
@@ -415,3 +415,9 @@ macos_option_as_alt yes
 x11_bell_volume 80
 # }}}
 
+
+
+# BEGIN_KITTY_THEME
+# Catppuccin-Frappe
+include current-theme.conf
+# END_KITTY_THEME
