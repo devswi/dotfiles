@@ -22,7 +22,11 @@ return {
       completion.luasnip,
       formatting.stylua,
       formatting.rustfmt,
-      formatting.stylelint,
+      formatting.stylelint.with({
+        condition = function(utils)
+          return utils.has_file('.stylelintrc')
+        end,
+      }),
       -- formatting
       -- eslint 和 prettier 的顺序不能反
       formatting.eslint_d,

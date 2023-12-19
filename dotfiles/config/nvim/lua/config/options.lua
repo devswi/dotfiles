@@ -20,4 +20,4 @@ opt.cmdheight = 1 -- always display cmd line
 opt.foldenable = true -- no fold to be applied when open a file
 opt.foldlevel = 99 -- if not set this, fold will be everywhere
 opt.foldlevelstart = 99
-opt.foldcolumn = '0'
+opt.foldcolumn = '1'
