@@ -4,5 +4,10 @@ return {
   keys = {
     { '<leader>z', ':ZenMode<CR>' },
   },
-  opts = {},
+  opts = {
+    window = {
+      width = 120,
+    },
+    plugins = {},
+  },
 }

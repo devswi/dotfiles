@@ -177,7 +177,7 @@ return {
               return navic.get_location()
             end,
             cond = navic.is_available,
-            color = { bg = '#25273b' },
+            -- color = { bg = '#25273b' },
           },
         },
       },
