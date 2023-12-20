@@ -17,7 +17,7 @@ return {
         illuminate = true,
         indent_blankline = { enabled = true },
         leap = true,
-        lsp_trouble = true,
+        lsp_trouble = false,
         mason = true,
         markdown = true,
         mini = true,

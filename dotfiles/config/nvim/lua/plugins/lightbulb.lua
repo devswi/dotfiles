@@ -21,7 +21,8 @@ return {
         -- Text to show at virtual text
         text = '💡',
         -- highlight mode to use for virtual text (replace, combine, blend), see :help nvim_buf_set_extmark() for reference
-        hl_mode = 'replace',
+        hl_mode = 'combine',
+        hl = 'LightBulbVirtualText',
       },
       status_text = {
         enabled = false,
