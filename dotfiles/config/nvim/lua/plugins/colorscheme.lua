@@ -11,6 +11,8 @@ return {
         alpha = true,
         cmp = true,
         dashboard = true,
+        dap = true,
+        dap_ui = true,
         flash = true,
         gitsigns = true,
         headlines = true,
