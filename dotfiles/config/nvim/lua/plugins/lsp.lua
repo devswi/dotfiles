@@ -114,11 +114,7 @@ return {
             local util = require('lspconfig').util
             local vue_root = util.root_pattern('vite.config.ts', 'vite.config.js')(fname)
             return not vue_root
-              and (
-                util.root_pattern('tsconfig.json', 'jsconfig.json')(fname)
-                or util.find_git_ancestor(fname)
-                or vim.loop.os_homedir()
-              )
+              and (util.root_pattern('package.json')(fname) or util.find_git_ancestor(fname) or vim.loop.os_homedir())
           end,
           single_file_support = false,
         },

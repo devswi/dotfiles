@@ -93,6 +93,18 @@ return {
             protocol = 'inspector',
             console = 'integratedTerminal',
           },
+          {
+            type = 'pwa-node',
+            request = 'launch',
+            name = 'Launch Test Program (pwa-node with vitest)',
+            cwd = vim.fn.getcwd(),
+            program = '${workspaceFolder}/node_modules/vitest/vitest.mjs',
+            args = { 'run', '${file}' },
+            autoAttachChildProcesses = true,
+            smartStep = true,
+            console = 'integratedTerminal',
+            skipFiles = { '<node_internals>/**', 'node_modules/**' },
+          },
         }
       end
     end,
