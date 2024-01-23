@@ -28,7 +28,7 @@ return {
         end,
       }),
       -- formatting
-      -- eslint 和 prettier 的顺序不能反
+      -- eslint_d 和 prettier 的顺序不能反
       formatting.eslint_d,
       formatting.prettier.with({
         condition = function(utils)
@@ -36,7 +36,9 @@ return {
         end,
       }),
       -- diagnostics
-      diagnostics.eslint_d,
+      diagnostics.eslint_d.with({
+        diagnostics_format = '[eslint] #{m}\n(#{c})',
+      }),
       diagnostics.stylelint.with({
         condition = function(utils)
           return utils.has_file('.stylelintrc')

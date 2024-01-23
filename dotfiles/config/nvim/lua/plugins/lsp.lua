@@ -66,55 +66,17 @@ return {
             local util = require('lspconfig').util
             return util.root_pattern('vue.config.js')(fname)
           end,
-          init_options = {
-            config = {
-              css = {},
-              emmet = {},
-              html = {
-                suggest = {},
-              },
-              javascript = {
-                format = {},
-              },
-              stylusSupremacy = {},
-              typescript = {
-                format = {},
-              },
-              vetur = {
-                experimental = {
-                  templateInterpolationService = true,
-                },
-                completion = {
-                  autoImport = true,
-                  tagCasing = 'kebab',
-                  useScaffoldSnippets = false,
-                },
-                format = {
-                  defaultFormatter = {
-                    js = 'none',
-                    ts = 'none',
-                  },
-                  defaultFormatterOptions = {},
-                  scriptInitialIndent = false,
-                  styleInitialIndent = false,
-                },
-                useWorkspaceDependencies = false,
-                validation = {
-                  script = true,
-                  style = true,
-                  template = false,
-                  interpolation = false,
-                },
-              },
-            },
-          },
         },
         tsserver = {
           root_dir = function(fname)
             local util = require('lspconfig').util
             local vue_root = util.root_pattern('vite.config.ts', 'vite.config.js')(fname)
             return not vue_root
-              and (util.root_pattern('package.json')(fname) or util.find_git_ancestor(fname) or vim.loop.os_homedir())
+              and (
+                util.root_pattern('package.json', 'js.config.json')(fname)
+                or util.find_git_ancestor(fname)
+                or vim.loop.os_homedir()
+              )
           end,
           single_file_support = false,
         },
