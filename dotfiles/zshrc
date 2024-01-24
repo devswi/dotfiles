@@ -22,9 +22,7 @@ alias zshupdate='omz update'
 alias vim='nvim'
 alias vi='nvim'
 
-# eslint -> eslint_d
-## use eslint flat config
-alias eslint='ESLINT_USE_FLAT_CONFIG=true eslint_d'
+alias re_eslint='ESLINT_USE_FLAT_CONFIG=true eslint_d'
 
 # npm -> pnpm
 # alias npm='pnpm'
