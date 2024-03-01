@@ -1,3 +1,5 @@
+local skip_features_filetypes = require('util.ft').skip_features_filetypes
+
 return {
   'lukas-reineke/indent-blankline.nvim',
   event = { 'BufReadPost', 'BufNewFile' },
@@ -7,7 +9,7 @@ return {
       char = '▏',
     },
     exclude = {
-      filetypes = { 'help', 'alpha', 'neo-tree', 'Trouble', 'lazy', 'Outline', '' },
+      filetypes = skip_features_filetypes,
       buftypes = { 'terminal' },
     },
   },

@@ -4,7 +4,7 @@ return {
     close_if_last_window = true,
     enable_diagnostics = false,
     filesystem = {
-      bind_to_cwd = false,
+      bind_to_cwd = true,
       follow_current_file = {
         enabled = true,
       },

@@ -1,4 +1,11 @@
+local vscode = require('util.vscode')
+vim.g.autoformat = vscode.get_setting('editor.formatOnSave')
+
 return {
+  {
+    'folke/neoconf.nvim',
+    enabled = false,
+  },
   {
     'folke/trouble.nvim',
     keys = { { 'gR', '<cmd>Trouble lsp_references<cr>', desc = 'References (Trouble)' } },
@@ -19,14 +26,15 @@ return {
     config = function()
       require('symbol-usage').setup({
         disable = {
-          lsp = {
-            'vuels',
-          },
           filetypes = {
             'Starter',
           },
         },
       })
     end,
+  },
+  {
+    'lukas-reineke/headlines.nvim',
+    enabled = false,
   },
 }

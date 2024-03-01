@@ -12,7 +12,6 @@ return {
         'vue-language-server', -- volar for vue3.x
         'marksman',
         'prisma-language-server',
-        'vetur-vls', -- vue2.x
         'unocss-language-server',
         'svelte-language-server',
       },

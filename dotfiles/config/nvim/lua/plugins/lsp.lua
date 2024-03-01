@@ -42,9 +42,28 @@ return {
         tailwindcss = {
           root_dir = function(fname)
             local util = require('lspconfig').util
-            local tailwind_available = util.root_pattern('tailwind.config.js', 'tailwind.config.ts')(fname)
+            local tailwind_available = util.root_pattern(
+              'tailwind.config.js',
+              'tailwind.config.cjs',
+              'tailwind.config.mjs',
+              'tailwind.config.ts'
+            )(fname)
             return tailwind_available
           end,
+        },
+        eslint = {
+          filetypes = {
+            'javascript',
+            'javascriptreact',
+            'javascript.jsx',
+            'typescript',
+            'typescriptreact',
+            'typescript.tsx',
+            'json',
+            'vue',
+            'svelte',
+            'astro',
+          },
         },
         emmet_ls = {
           filetypes = {
@@ -53,28 +72,6 @@ return {
             'typescriptreact',
             'vue',
           },
-        },
-        volar = {
-          filetypes = { 'vue', 'javascript', 'javascriptreact', 'typescript', 'typescriptreact', 'json' },
-          root_dir = function(fname)
-            local util = require('lspconfig').util
-            return util.root_pattern('vite.config.ts', 'vite.config.js', 'nuxt.config.ts')(fname)
-          end,
-        },
-        vuels = {
-          root_dir = function(fname)
-            local util = require('lspconfig').util
-            return util.root_pattern('vue.config.js')(fname)
-          end,
-        },
-        tsserver = {
-          root_dir = function(fname)
-            local util = require('lspconfig').util
-            local vue_root = util.root_pattern('vite.config.ts', 'vite.config.js')(fname)
-            return not vue_root
-              and (util.root_pattern('jsconfig.json')(fname) or util.find_git_ancestor(fname) or vim.loop.os_homedir())
-          end,
-          single_file_support = false,
         },
       },
     },
