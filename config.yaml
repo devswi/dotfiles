@@ -22,9 +22,6 @@ dotfiles:
   d_kitty:
     src: config/kitty
     dst: ~/.config/kitty
-  d_alacritty:
-    src: config/alacritty
-    dst: ~/.config/alacritty
   d_nvim:
     src: config/nvim
     dst: ~/.config/nvim
@@ -37,17 +34,6 @@ dotfiles:
   f_tmux.conf:
     src: tmux.conf
     dst: ~/.tmux.conf
-  d_ssh:
-    src: ssh
-    dst: ~/.ssh
-    chmod: '700'
-    trans_install: gpgdir
-    trans_update: gpgdir
-  f_config:
-    src: kube/config
-    dst: ~/.kube/config
-    trans_install: gpg
-    trans_update: gpg
   f_popuptmux.sh:
     src: local/bin/popuptmux.sh
     dst: ~/.local/bin/popuptmux.sh
@@ -57,11 +43,8 @@ profiles:
     dotfiles:
     - f_zshrc
     - d_kitty
-    - d_alacritty
     - d_nvim
     - f_tmux.conf
-    - d_ssh
-    - f_config
     - f_popuptmux.sh
 trans_install:
   gpg: gpg -q --for-your-eyes-only --no-tty -d {0} > {1}
