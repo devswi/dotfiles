@@ -1,6 +1,3 @@
-local vscode = require('util.vscode')
-vim.g.autoformat = vscode.get_setting('editor.formatOnSave')
-
 return {
   {
     'folke/neoconf.nvim',
@@ -36,5 +33,15 @@ return {
   {
     'lukas-reineke/headlines.nvim',
     enabled = false,
+  },
+  {
+    'folke/flash.nvim',
+    keys = {
+      {
+        'S',
+        mode = { 'n', 'o', 'x' },
+        false,
+      },
+    },
   },
 }

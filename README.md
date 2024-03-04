@@ -14,7 +14,7 @@ some features:
 
  - [x] Superpower AI auto-completed tool ([codeium](https://codeium.com/)) 
  - [x] Beautiful color scheme ([catppuccin](https://github.com/catppuccin))
- - [x] Vue supported (support volar take over mode), thanks for ([2nthony's dotfiles](https://github.com/2nthony/dotfiles))
+ - [x] Vue supported, thanks for ([2nthony's dotfiles](https://github.com/2nthony/dotfiles))
 
  ## Keymaps
 

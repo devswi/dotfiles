@@ -1,7 +1,6 @@
 -- vue
--- enable take over mode, disable tsserver
 return {
-  'nvim-lspconfig',
+  'neovim/nvim-lspconfig',
   opts = function(_, opts)
     local util = require('lspconfig.util')
     local current_path = vim.fn.expand('%:p:h')
