@@ -14,6 +14,7 @@ return {
         'prisma-language-server',
         'unocss-language-server',
         'svelte-language-server',
+        'json-lsp',
       },
     },
   },

@@ -21,6 +21,19 @@ return {
     opts = {
       servers = {
         eslint = {
+          filetypes = {
+            'javascript',
+            'javascriptreact',
+            'javascript.jsx',
+            'typescript',
+            'typescriptreact',
+            'typescript.tsx',
+            'json',
+            'jsonc',
+            'vue',
+            'svelte',
+            'astro',
+          },
           settings = {
             experimental = {
               useFlatConfig = useFlatConfig,

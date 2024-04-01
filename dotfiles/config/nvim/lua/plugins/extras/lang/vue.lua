@@ -18,7 +18,6 @@ return {
           'typescript.tsx',
           'javascriptreact',
           'typescriptreact',
-          'json',
         },
       }
       opts.servers.tsserver = {

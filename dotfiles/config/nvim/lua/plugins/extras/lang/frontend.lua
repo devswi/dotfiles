@@ -57,18 +57,4 @@ return {
       end,
     },
   },
-  -- opts = function(_, opts)
-  --
-  --   if is_vue then
-  --     opts.servers.tsserver = {
-  --       autostart = false,
-  --       root_dir = function()
-  --         return false
-  --       end,
-  --       single_file_support = false,
-  --     }
-  --   end
-  --
-  --   return opts
-  -- end,
 }
