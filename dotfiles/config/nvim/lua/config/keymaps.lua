@@ -1,33 +1,10 @@
 -- Keymaps are automatically loaded on the VeryLazy event
 -- Default keymaps that are always set: https://github.com/LazyVim/LazyVim/blob/main/lua/lazyvim/config/keymaps.lua
+-- Add any additional keymaps here
 
-local keymap = vim.keymap.set
-local opts = { noremap = true, silent = true }
-
-keymap('n', '+', '<C-a>', opts)
-keymap('n', '-', '<C-x>', opts)
-
--- select all
-keymap('n', '<C-a>', 'gg<S-v>G', opts)
-
--- jk
-keymap('i', 'jk', '<esc>', opts)
-
-keymap('i', '<C-b>', '<Left>')
-keymap('i', '<C-f>', '<Right>')
-
--- center cursor
-keymap('n', 'n', 'nzzzv', opts)
-keymap('n', 'N', 'Nzzzv', opts)
-
-keymap('n', ']<space>', 'o<ESC>', opts)
-keymap('n', '[<space>', 'O<ESC>', opts)
-
-keymap('n', '<leader>ft', '<Nop>')
-keymap('n', '<leader>fT', '<Nop>', { desc = 'Terminal (cwd)' })
-
-keymap('n', '<leader>gg', '<Nop>')
-keymap('n', '<leader>gG', '<Nop>')
-
--- disable default terminal keymap
-vim.keymap.del('n', '<c-_>')
+local lazykeys = require("util.keymap").lazykeys
+local ok, keymaps = pcall(require, "keymaps")
+if ok then
+  local generals = keymaps.generals
+  lazykeys(generals)
+end

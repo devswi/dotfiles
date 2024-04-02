@@ -10,9 +10,11 @@ return {
   {
     'echasnovski/mini.surround',
     enabled = false,
+    vscode = false,
   },
   {
     'kylechui/nvim-surround',
+    vscode = true,
     config = function()
       require('nvim-surround').setup()
     end,

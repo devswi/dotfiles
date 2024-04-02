@@ -1,6 +1,7 @@
 return {
   'Exafunction/codeium.vim',
   event = 'BufEnter',
+  vscode = false,
   config = function()
     -- disable codeium
     vim.g.codeium_disable_bindings = 1
