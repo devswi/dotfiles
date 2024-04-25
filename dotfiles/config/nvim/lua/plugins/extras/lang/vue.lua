@@ -1,34 +1,46 @@
 -- vue
-return {
-  'neovim/nvim-lspconfig',
-  opts = function(_, opts)
-    local util = require('lspconfig.util')
-    local current_path = vim.fn.expand('%:p:h')
-    local project_root = util.find_node_modules_ancestor(current_path)
+-- hybrid mode, https://github.com/vuejs/language-tools#hybrid-mode-configuration-requires-vuelanguage-server-version-200
 
-    local vue_path = util.path.join(project_root, 'node_modules', 'vue')
-    local is_vue = vim.fn.isdirectory(vue_path) == 1
-    if is_vue then
-      opts.servers.volar = {
+return {
+  {
+    "mason.nvim",
+    opts = {
+      ensure_installed = {
+        "vue-language-server",
+      },
+    },
+  },
+  {
+    "nvim-lspconfig",
+    opts = function(_, opts)
+      local mason_registry = require("mason-registry")
+      local vue_language_server_path = mason_registry.get_package("vue-language-server"):get_install_path()
+        .. "/node_modules/@vue/language-server"
+
+      opts.servers.volar = {}
+
+      opts.servers.tsserver = {
+        init_options = {
+          plugins = {
+            {
+              name = "@vue/typescript-plugin",
+              location = vue_language_server_path,
+              languages = { "vue" },
+              -- configNamespace = "typescript",
+              -- enableForWorkspaceTypeScriptVersions = true,
+            },
+          },
+        },
         filetypes = {
-          'vue',
-          'javascript',
-          'javascript.jsx',
-          'typescript',
-          'typescript.tsx',
-          'javascriptreact',
-          'typescriptreact',
+          "typescript",
+          "javascript",
+          "javascriptreact",
+          "typescriptreact",
+          "vue",
         },
       }
-      opts.servers.tsserver = {
-        autostart = false,
-        root_dir = function()
-          return false
-        end,
-        single_file_support = false,
-      }
-    end
 
-    return opts
-  end,
+      return opts
+    end,
+  },
 }

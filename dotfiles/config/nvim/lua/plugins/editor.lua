@@ -1,48 +1,91 @@
+-- cSpell:disable
 return {
   {
-    'hrsh7th/nvim-cmp',
-    dependencies = { 'hrsh7th/cmp-cmdline' },
-    opts = function(_, opts)
-      local cmp = require('cmp')
-      opts.enabled = function()
-        local filetype = vim.bo.filetype
-        if filetype == 'neo-tree-popup' or filetype == 'TelescopePrompt' then
-          return false
-        end
-        if
-          require('cmp.config.context').in_treesitter_capture('comment') == true
-          or require('cmp.config.context').in_syntax_group('Comment')
-        then
-          return false
-        else
-          return true
-        end
-      end
-      opts.experimental = {
-        ghost_text = false, -- this feature conflict with copilot.vim's preview.
-      }
-      cmp.setup.cmdline({ '/', '?' }, {
-        mapping = cmp.mapping.preset.cmdline(),
-        sources = {
-          { name = 'buffer' },
-        },
-      })
-
-      cmp.setup.cmdline(':', {
-        mapping = cmp.mapping.preset.cmdline(),
-        sources = cmp.config.sources({
-          { name = 'path' },
-        }, {
-          { name = 'cmdline' },
-        }),
-      })
+    import = "plugins.extras.coding.fold",
+  },
+  {
+    "NvChad/nvim-colorizer.lua",
+    opts = {
+      user_default_options = {
+        tailwind = true,
+        RGB = true, -- #RGB hex codes
+        RRGGBB = true, -- #RRGGBB hex codes
+        names = false, -- "Name" codes like Blue or blue
+        RRGGBBAA = true, -- #RRGGBBAA hex codes
+        AARRGGBB = true, -- 0xAARRGGBB hex codes
+        rgb_fn = true, -- CSS rgb() and rgba() functions
+        hsl_fn = true, -- CSS hsl() and hsla() functions
+        css = true, -- Enable all CSS features: rgb_fn, hsl_fn, names, RGB, RRGGBB
+        css_fn = true,
+      },
+    },
+  },
+  {
+    "iamcco/markdown-preview.nvim",
+    event = "BufRead",
+    config = function()
+      vim.fn["mkdp#util#install"]()
     end,
   },
   {
-    'iamcco/markdown-preview.nvim',
-    event = 'BufRead',
-    config = function()
-      vim.fn['mkdp#util#install']()
-    end,
+    "nvim-treesitter/nvim-treesitter",
+    opts = {
+      ensure_installed = {
+        "bash",
+        "c",
+        "diff",
+        "html",
+        "javascript",
+        "jsdoc",
+        "json",
+        "jsonc",
+        "lua",
+        "luadoc",
+        "luap",
+        "markdown",
+        "markdown_inline",
+        "python",
+        "query",
+        "regex",
+        "toml",
+        "tsx",
+        "vim",
+        "vimdoc",
+        "yaml",
+        "css",
+        "dockerfile",
+        "prisma",
+        "json5",
+        "go",
+        "pug",
+        "ruby",
+        "scss",
+        "dart",
+        "typescript",
+        "rust",
+        "vue",
+        "svelte",
+      },
+    },
+  },
+  {
+    "folke/zen-mode.nvim",
+    cmd = { "ZenMode" },
+    keys = {
+      { "<leader>wo", ":ZenMode<cr>", desc = "Zen Mode" },
+    },
+    opts = {
+      window = {
+        width = 0.75,
+        options = {
+          number = false,
+        },
+      },
+      plugins = {
+        gitsigns = {
+          enabled = true, -- true to disable...
+        },
+      },
+    },
   },
 }

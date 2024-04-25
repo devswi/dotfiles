@@ -1,47 +1,49 @@
+-- cSpell:disable
 return {
+  { import = "plugins.extras.coding.autopairs" },
+  { import = "plugins.extras.coding.comment" },
+  { import = "plugins.extras.coding.load-vscode-snippets" },
+  { import = "lazyvim.plugins.extras.test.core" },
   {
-    'folke/neoconf.nvim',
+    "echasnovski/mini.surround",
     enabled = false,
   },
   {
-    'folke/trouble.nvim',
-    keys = { { 'gR', '<cmd>Trouble lsp_references<cr>', desc = 'References (Trouble)' } },
-  },
-  {
-    'echasnovski/mini.surround',
-    enabled = false,
-    vscode = false,
-  },
-  {
-    'kylechui/nvim-surround',
+    "kylechui/nvim-surround",
     vscode = true,
     config = function()
-      require('nvim-surround').setup()
+      require("nvim-surround").setup()
     end,
   },
   {
-    'Wansmer/symbol-usage.nvim',
-    event = 'BufReadPre', -- need run before LspAttach if you use nvim 0.9. On 0.10 use 'LspAttach'
+    "Exafunction/codeium.vim",
+    event = "BufEnter",
+    vscode = false,
     config = function()
-      require('symbol-usage').setup({
-        disable = {
-          filetypes = {
-            'Starter',
-          },
-        },
-      })
+      -- disable codeium
+      vim.g.codeium_disable_bindings = 1
+
+      -- reset codeium
+      vim.keymap.set("i", "<C-a>", function()
+        return vim.fn["codeium#Accept"]()
+      end, { expr = true, silent = true })
+      vim.keymap.set("i", "<c-]>", function()
+        return vim.fn["codeium#CycleCompletions"](1)
+      end, { expr = true, silent = true })
+      vim.keymap.set("i", "<c-[>", function()
+        return vim.fn["codeium#CycleCompletions"](-1)
+      end, { expr = true, silent = true })
+      vim.keymap.set("i", "<c-x>", function()
+        return vim.fn["codeium#Clear"]()
+      end, { expr = true, silent = true })
     end,
   },
   {
-    'lukas-reineke/headlines.nvim',
-    enabled = false,
-  },
-  {
-    'folke/flash.nvim',
+    "folke/flash.nvim",
     keys = {
       {
-        'S',
-        mode = { 'n', 'o', 'x' },
+        "S",
+        mode = { "n", "o", "x" },
         false,
       },
     },

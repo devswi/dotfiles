@@ -1,13 +1,15 @@
+-- cSpell:disable
+--
 local M = {}
 
 ---get full `.vscode/settings.json` as table
 function M.get_settings()
   local settings = {}
   local cwd = vim.fn.getcwd()
-  local filename = vim.fn.join({ cwd, '.vscode/settings.json' }, '/')
+  local filename = vim.fn.join({ cwd, ".vscode/settings.json" }, "/")
 
   if vim.fn.filereadable(filename) == 1 then
-    local json = vim.fn.json_decode(vim.fn.readfile(filename, 'json'))
+    local json = vim.fn.json_decode(vim.fn.readfile(filename, "json"))
     if json then
       settings = json
     end

@@ -1,9 +1,9 @@
 export ZSH="/Users/shiwei/.oh-my-zsh"
 
-# if [ -z "$TMUX" ]
-# then
-#     tmux attach -t TMUX || tmux new -s TMUX
-# fi
+if [ -z "$TMUX" ]
+then
+    tmux attach -t TMUX || tmux new -s TMUX
+fi
 
 ZSH_THEME="ys"
 
@@ -26,7 +26,7 @@ alias vi='nvim'
 # alias npm='pnpm'
 
 # dotdrop
-alias dotdrop='dotdrop --cfg=$HOME/Repos/Github/dotfiles/config.yaml'
+alias dotdrop='dotdrop --cfg=$HOME/Repositories/Github/dotfiles/config.yaml'
 
 export PATH="/opt/homebrew/bin:$PATH"
 
@@ -52,6 +52,8 @@ source <(kubectl completion zsh)
 export PNPM_HOME="/Users/shiwei/Library/pnpm"
 export PATH="$PNPM_HOME:$PATH"
 # pnpm end
+
+eval "$(fzf --zsh)"
 
 export PATH="/opt/homebrew/opt/openjdk/bin:$PATH"
 

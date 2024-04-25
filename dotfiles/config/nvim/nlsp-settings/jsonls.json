@@ -65,12 +65,6 @@
     },
     {
       "fileMatch": [
-        ".ghqrc"
-      ],
-      "url": "https://cdn.jsdelivr.net/gh/2nthony/ghq/scheme.json"
-    },
-    {
-      "fileMatch": [
         "renovate.json"
       ],
       "url": "https://docs.renovatebot.com/renovate-schema.json"
