@@ -1,7 +1,4 @@
-local vscode_code_snippets_paths = {
-  -- cspell:disable-next-line
-  "~/Library/Application Support/Code/User/snippets/codespeedy.code-snippets",
-}
+local vscode_code_snippets_paths = {}
 
 return {
   "LuaSnip",

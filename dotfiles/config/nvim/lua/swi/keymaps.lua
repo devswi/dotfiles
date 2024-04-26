@@ -10,6 +10,9 @@ M.generals = {
   { "<c-e>", "<c-x><c-e>", mode = "i" },
   { "<c-y>", "<c-x><c-y>", mode = "i" },
 
+  { "+", "<c-a>" },
+  { "-", "<c-x>" },
+
   -- select all
   { "<c-a>", "gg<S-v>G" },
 
