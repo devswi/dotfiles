@@ -15,8 +15,10 @@ vim.api.nvim_create_autocmd("BufReadPost", {
 
 local _ft = vim.api.nvim_create_augroup("FileTypeSettings", { clear = true })
 vim.api.nvim_create_autocmd("FileType", {
-  pattern = { "Outline" },
+  pattern = { "Outline", "neo-tree" },
   callback = function()
+    require("ufo").detach()
+    vim.opt_local.foldenable = false
     vim.wo.signcolumn = "no"
     ---@diagnostic disable-next-line: inject-field
     vim.b.miniindentscope_disable = true

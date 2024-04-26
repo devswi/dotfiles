@@ -271,3 +271,4 @@ setfiletype
 navic
 cmdheight
 edgebar
+foldcolumn

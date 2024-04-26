@@ -11,6 +11,7 @@ return {
   { import = "plugins.extras.lang.cspell" },
   { import = "plugins.extras.lang.vue" },
   { import = "plugins.extras.lang.typescript" },
+  { import = "plugins.extras.lang.rust" },
   { import = "plugins.extras.linting.eslint" },
   {
     "neovim/nvim-lspconfig",

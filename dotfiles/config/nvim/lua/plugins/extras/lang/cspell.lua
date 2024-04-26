@@ -32,8 +32,6 @@ return {
   {
     "nvim-lint",
     init = function()
-      local cspell = require("lint").linters.cspell
-
       local config_file_name = "cspell.json"
       local function find_json(cwd)
         local workspace_cspell_json_file_path = path.join(cwd, config_file_name)
@@ -46,15 +44,19 @@ return {
         end
       end
 
-      table.insert(cspell.args, "-c")
       local config_json = find_json(vim.fn.getcwd())
       if config_json ~= nil then
+        local cspell = require("lint").linters.cspell
+
+        table.insert(cspell.args, "-c")
         table.insert(cspell.args, find_json(vim.fn.getcwd()))
       end
     end,
     opts = {
       linters_by_ft = {
-        ["*"] = { "cspell" },
+        ["javascript"] = { "cspell" },
+        ["typescript"] = { "cspell" },
+        ["vue"] = { "cspell" },
       },
     },
   },

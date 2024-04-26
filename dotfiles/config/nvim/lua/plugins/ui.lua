@@ -68,7 +68,7 @@ return {
   {
     "SmiteshP/nvim-navic",
     opts = function()
-      local icons = require("icons").icons
+      local icons = require("swi.icons").icons
       return {
         separator = icons.indicator.right,
         highlight = true,
@@ -86,7 +86,7 @@ return {
         return vim.fn.winwidth(0) > 60
       end
 
-      local icons = require("icons").icons
+      local icons = require("swi.icons").icons
       local lazy_icons = require("lazyvim.config").icons
 
       local diff = {
