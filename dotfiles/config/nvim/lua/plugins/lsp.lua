@@ -8,7 +8,6 @@ local vscode = require("util.vscode")
 vim.g.autoformat = vscode.get_setting("editor.formatOnSave")
 
 return {
-  { import = "plugins.extras.lang.cspell" },
   { import = "plugins.extras.lang.vue" },
   { import = "plugins.extras.lang.typescript" },
   { import = "plugins.extras.lang.rust" },

@@ -28,9 +28,16 @@ return {
         end
       end
     end,
+    keys = {
+      {
+        "<leader>ad",
+        "<cmd>lua require('util.cspell').add_word_to_c_spell_dictionary()<CR>",
+        desc = "Add unknown to cspell dictionary",
+      },
+    },
   },
   {
-    "nvim-lint",
+    "mfussenegger/nvim-lint",
     init = function()
       local config_file_name = "cspell.json"
       local function find_json(cwd)
@@ -49,14 +56,12 @@ return {
         local cspell = require("lint").linters.cspell
 
         table.insert(cspell.args, "-c")
-        table.insert(cspell.args, find_json(vim.fn.getcwd()))
+        table.insert(cspell.args, config_json)
       end
     end,
     opts = {
       linters_by_ft = {
-        ["javascript"] = { "cspell" },
-        ["typescript"] = { "cspell" },
-        ["vue"] = { "cspell" },
+        ["*"] = { "cspell" },
       },
     },
   },

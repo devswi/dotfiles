@@ -23,17 +23,8 @@ M.generals = {
   { "<c-f>", "<Right>", mode = "i" },
 
   -- center cursor
-  -- cspell:disable-next-line
   { "n", "nzzzv" },
-  -- cspell:disable-next-line
   { "N", "Nzzzv" },
-
-  {
-    "<leader>ad",
-    "<cmd>lua require('util.cspell').add_word_to_c_spell_dictionary()<CR>",
-    mode = "n",
-    desc = "Add unknown to cspell dictionary",
-  },
 
   { "<A-Down>", ":m .+1<CR>" },
   { "<A-Up>", ":m .-2<CR>" },
