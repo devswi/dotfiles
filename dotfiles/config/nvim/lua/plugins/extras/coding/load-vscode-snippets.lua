@@ -1,4 +1,6 @@
-local vscode_code_snippets_paths = {}
+local vscode_code_snippets_paths = {
+  "~/Library/Application Support/Code/User/snippets/vitest.code-snippets",
+}
 
 return {
   "LuaSnip",
