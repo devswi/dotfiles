@@ -39,6 +39,19 @@ return {
       useFlatConfig = useFlatConfig or settings["eslint.useFlatConfig"] or settings["eslint.experimental.useFlatConfig"]
 
       opts.servers.eslint = {
+        filetypes = {
+          "javascript",
+          "javascriptreact",
+          "javascript.jsx",
+          "typescript",
+          "typescriptreact",
+          "typescript.tsx",
+          "vue",
+          "svelte",
+          "astro",
+          "json",
+          "jsonc",
+        },
         settings = {
           useFlatConfig = useFlatConfig,
         },
