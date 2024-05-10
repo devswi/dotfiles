@@ -103,4 +103,32 @@ return {
       },
     },
   },
+  {
+    "nvim-neo-tree/neo-tree.nvim",
+    opts = {
+      filesystem = {
+        filtered_items = {
+          hide_dotfiles = false,
+          hide_by_name = {
+            ".git",
+            ".DS_Store",
+            "thumbs.db",
+          },
+        },
+      },
+    },
+  },
+  {
+    "nvim-treesitter/nvim-treesitter",
+    config = function(_, opts)
+      require("nvim-treesitter.configs").setup(opts)
+
+      vim.filetype.add({
+        extension = {
+          mdx = "mdx",
+        },
+      })
+      vim.treesitter.language.register("markdown", "mdx")
+    end,
+  },
 }

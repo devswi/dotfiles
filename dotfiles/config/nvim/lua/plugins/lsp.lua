@@ -12,6 +12,7 @@ return {
   { import = "plugins.extras.lang.typescript" },
   { import = "plugins.extras.lang.rust" },
   { import = "plugins.extras.linting.eslint" },
+  { import = "plugins.extras.formatting.prettier" },
   {
     "neovim/nvim-lspconfig",
     opts = {
