@@ -1,9 +1,11 @@
 export ZSH="/Users/shiwei/.oh-my-zsh"
 
-if [ -z "$TMUX" ]
-then
-    tmux attach -t TMUX || tmux new -s TMUX
-fi
+function use_tmux() {
+  if [ -z "$TMUX" ]
+  then
+      tmux attach -t TMUX || tmux new -s TMUX
+  fi
+}
 
 ZSH_THEME="ys"
 
