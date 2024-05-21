@@ -26,7 +26,7 @@ opt.foldcolumn = "1"
 opt.backup = false
 opt.backupskip = { "/tmp/*", "/private/tmp/*" }
 opt.breakindent = true
-opt.formatoptions:remove({ "r" })
+opt.formatoptions:remove({ "c", "r", "o" })
 opt.relativenumber = false
 opt.diffopt = "filler,iwhite,internal,linematch:60,algorithm:patience"
 opt.splitkeep = "cursor"

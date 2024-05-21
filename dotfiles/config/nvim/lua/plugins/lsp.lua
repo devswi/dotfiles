@@ -18,6 +18,9 @@ return {
     opts = {
       diagnostics = {
         underline = true,
+        inlay_hints = {
+          enabled = false,
+        },
         virtual_text = {
           ource = false,
         },
