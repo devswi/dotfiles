@@ -2,7 +2,8 @@
 return {
   { import = "plugins.extras.coding.autopairs" },
   { import = "plugins.extras.coding.comment" },
-  { import = "plugins.extras.coding.load-vscode-snippets" },
+  -- { import = "plugins.extras.coding.load-vscode-snippets" },
+  { import = "lazyvim.plugins.extras.coding.luasnip" },
   { import = "lazyvim.plugins.extras.test.core" },
   {
     "echasnovski/mini.surround",
