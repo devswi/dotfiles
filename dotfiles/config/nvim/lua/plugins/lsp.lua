@@ -19,7 +19,7 @@ return {
       diagnostics = {
         underline = true,
         inlay_hints = {
-          enabled = false,
+          enabled = true,
         },
         virtual_text = {
           ource = false,
