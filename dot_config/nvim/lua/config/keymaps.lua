@@ -2,36 +2,44 @@
 -- Default keymaps that are always set: https://github.com/LazyVim/LazyVim/blob/main/lua/lazyvim/config/keymaps.lua
 -- Add any additional keymaps here
 
-vim.keymap.set("n", "+", "<C-a>")
-vim.keymap.set("n", "-", "<C-x>")
+local map = LazyVim.safe_keymap_set
+
+map("n", "+", "<C-a>")
+map("n", "-", "<C-x>")
 
 -- Select all
-vim.keymap.set("n", "<C-a>", "gg<S-v>G")
+map("n", "<C-a>", "gg<S-v>G")
 
 -- Always center cursor
-vim.keymap.set("n", "n", "nzzzv")
-vim.keymap.set("n", "N", "Nzzzv")
+map("n", "n", "nzzzv")
+map("n", "N", "Nzzzv")
 
-vim.keymap.set("n", "<C-d>", "<C-d>zz")
-vim.keymap.set("n", "<C-u>", "<C-u>zz")
+map("n", "<C-d>", "<C-d>zz")
+map("n", "<C-u>", "<C-u>zz")
 
 -- Better escape
-vim.keymap.set("i", "jk", "<ESC>")
+map("i", "jk", "<ESC>")
 
 -- Move cursor in insert mode
-vim.keymap.set("i", "<C-b>", "<Left>")
-vim.keymap.set("i", "<C-f>", "<Right>")
+map("i", "<C-b>", "<Left>")
+map("i", "<C-f>", "<Right>")
 
 -- Delete is not cut
 -- https://stackoverflow.com/questions/11993851/how-to-delete-not-cut-in-vim/30423919#30423919
-vim.keymap.set({ "n", "x" }, "d", '"_d')
-vim.keymap.set({ "n", "x" }, "D", '"_D')
+map({ "n", "x" }, "d", '"_d')
+map({ "n", "x" }, "D", '"_D')
 
-vim.keymap.set("n", "dd", '"_dd', { noremap = true })
+map("n", "dd", '"_dd', { noremap = true })
 
-vim.keymap.set({ "n", "x" }, "x", "d")
-vim.keymap.set({ "n", "x" }, "X", "D")
-vim.keymap.set({ "n", "x" }, "xx", "dd")
+map({ "n", "x" }, "x", "d")
+map({ "n", "x" }, "X", "D")
+map({ "n", "x" }, "xx", "dd")
 
 -- Visual paste, don't yank
-vim.keymap.set("v", "p", '"_dP')
+map("v", "p", '"_dP')
+
+-- Move to window using the <ctrl> hjkl keys
+map("n", "<C-h>", "<cmd>NvimTmuxNavigateLeft<cr>", { desc = "Go to Left Window", remap = true })
+map("n", "<C-j>", "<cmd>NvimTmuxNavigateDown<cr>", { desc = "Go to Lower Window", remap = true })
+map("n", "<C-k>", "<cmd>NvimTmuxNavigateUp<cr>", { desc = "Go to Upper Window", remap = true })
+map("n", "<C-l>", "<cmd>NvimTmuxNavigateRight<cr>", { desc = "Go to Right Window", remap = true })

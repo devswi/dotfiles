@@ -1,4 +1,8 @@
+.DS_Store
+
 */tmux/plugins
 
 # zed
 *.mdb
+
+lazy-lock.json
