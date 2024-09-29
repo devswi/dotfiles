@@ -304,13 +304,13 @@ return {
             {
               "filetype",
               icon_only = true,
-              color = { bg = "#25273b" },
+              color = { bg = "transparent" },
             },
             {
               "filename",
               path = 1,
               file_status = false,
-              color = { bg = "#25273b", fg = "#a9b1d6" },
+              color = { bg = "transparent", fg = "#a9b1d6" },
             },
           },
           lualine_b = {
