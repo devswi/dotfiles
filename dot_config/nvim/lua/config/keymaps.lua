@@ -28,12 +28,7 @@ map("i", "<C-f>", "<Right>")
 -- https://stackoverflow.com/questions/11993851/how-to-delete-not-cut-in-vim/30423919#30423919
 map({ "n", "x" }, "d", '"_d')
 map({ "n", "x" }, "D", '"_D')
-
 map("n", "dd", '"_dd', { noremap = true })
-
-map({ "n", "x" }, "x", "d")
-map({ "n", "x" }, "X", "D")
-map({ "n", "x" }, "xx", "dd")
 
 -- Visual paste, don't yank
 map("v", "p", '"_dP')
