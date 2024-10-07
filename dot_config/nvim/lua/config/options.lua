@@ -36,7 +36,6 @@ vim.lsp.handlers["textDocument/hover"] = function(_, result, ctx, config)
   if not (result and result.contents) then
     return
   end
-  print("hover")
 
   local markdown_lines = vim.split(result.contents.value, "\n", { trimempty = false })
 
