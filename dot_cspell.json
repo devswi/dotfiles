@@ -1,0 +1,20 @@
+{
+  "$schema": "https://raw.githubusercontent.com/streetsidesoftware/cspell/main/cspell.schema.json",
+  "useGitignore": true,
+  "allowCompoundWords": true,
+  "globRoot": ".",
+  "ignorePaths": [
+    ".vscode",
+    "node_modules",
+    "dist",
+    "build"
+  ],
+  "words": [
+    "devswi",
+    "cspell",
+    "nvim",
+    "neovim",
+    "bson",
+    "codeium"
+  ]
+}
