@@ -4,6 +4,10 @@ return {
     formatters_by_ft = {
       css = { "prettier" },
       scss = { "prettier" },
+      go = {
+        "goimports",
+        "gofumpt",
+      },
     },
     lang_to_ext = {
       vue = "vue",

@@ -32,5 +32,10 @@ export NVM_DIR="$HOME/.nvm"
 
 [ -f $HOMEBREW_PREFIX/etc/profile.d/autojump.sh ] && . $HOMEBREW_PREFIX/etc/profile.d/autojump.sh
 
+# Go proxy
+export GOPROXY=https://goproxy.cn
+
 # fzf
 eval "$(fzf --zsh)"
+
+[[ -s "/Users/shiwei/.gvm/scripts/gvm" ]] && source "/Users/shiwei/.gvm/scripts/gvm"
