@@ -30,10 +30,9 @@ map({ "n", "x" }, "d", '"_d')
 map({ "n", "x" }, "D", '"_D')
 map("n", "dd", '"_dd', { noremap = true })
 
--- Cut
-map({ "n", "x" }, "x", "d")
-map("n", "xx", "dd")
-map({ "n", "x" }, "X", "D")
+map({ "n", "x" }, "<leader>d", "d")
+map({ "n", "x" }, "<leader>D", "D")
+map("n", "<leader>dd", "dd", { noremap = true })
 
 -- Visual paste, don't yank
 map("v", "p", '"_dP')
