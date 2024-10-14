@@ -2,8 +2,11 @@ return {
   "stevearc/conform.nvim",
   opts = {
     formatters_by_ft = {
-      css = { "prettier" },
-      scss = { "prettier" },
+      css = { "prettier", "eslint" },
+      scss = { "prettier", "eslint" },
+      json = { "prettier", "eslint" },
+      jsonc = { "prettier", "eslint" },
+      html = { "prettier", "eslint" },
       go = {
         "goimports",
         "gofumpt",

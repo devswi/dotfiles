@@ -82,6 +82,21 @@ return {
         gopls = {
           settings = {},
         },
+        eslint = {
+          filetypes = {
+            "javascript",
+            "javascriptreact",
+            "javascript.jsx",
+            "typescript",
+            "typescriptreact",
+            "typescript.tsx",
+            "vue",
+            "scss",
+            "css",
+            "less",
+            "json",
+          },
+        },
       },
       setup = {
         eslint = function()
