@@ -27,6 +27,7 @@ require("lazy").setup({
     { import = "lazyvim.plugins.extras.lang.prisma" },
     { import = "lazyvim.plugins.extras.lang.json" },
     { import = "lazyvim.plugins.extras.lang.markdown" },
+    { import = "plugins.extras.lang.sql" },
     -- { import = "plugins.extras.lang.harper" },
     { import = "plugins.extras.lang.cspell" },
     { import = "plugins.extras.lang.emmet" },
