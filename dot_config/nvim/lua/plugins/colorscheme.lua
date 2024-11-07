@@ -46,6 +46,14 @@ return {
         which_key = true,
         ufo = true,
       },
+      highlight_overrides = {
+        all = function()
+          return {
+            MultiCursor = { bg = "#177cb0", fg = "#ffffff" },
+            MultiCursorMain = { bg = "#48c0a3", fg = "#ffffff" },
+          }
+        end,
+      },
     },
   },
   {
