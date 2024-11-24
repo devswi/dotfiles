@@ -12,6 +12,7 @@ plugins=(
   pnpm
   colored-man-pages
   colorize
+  kubectl
   tmux
   zsh-autosuggestions
   zsh-syntax-highlighting
