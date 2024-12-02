@@ -2,6 +2,14 @@
 
 ![starter](./images/mini-starter.png)
 
+<details>
+  <summary>More screenshots</summary>
+
+  ![code-context](./images/code-context.png)
+  ![fold](./images/fold.png)
+  ![golang](./images/golang.png)
+</details>
+
 ## Contents
 
 - Neovim config
@@ -16,4 +24,3 @@ Based on [💤 lazy.nvim](https://www.lazyvim.org/)
 
 - Neovim >= 0.10.0
 - A [Nerd font](https://github.com/ryanoasis/nerd-fonts), I am using IBM Plex Mono
-
