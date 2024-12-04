@@ -35,7 +35,13 @@ map({ "n", "x" }, "<leader>D", "D")
 map("n", "<leader>dd", "dd", { noremap = true })
 
 -- Visual paste, don't yank
-map("v", "p", '"_dP')
+map("v", "p", function()
+  if require("luasnip").in_snippet() then
+    vim.api.nvim_feedkeys("p", "n", false)
+  else
+    vim.api.nvim_feedkeys('"_dP', "n", false)
+  end
+end)
 
 -- Move to window using the <ctrl> hjkl keys
 map("n", "<C-h>", "<cmd>lua require('tmux').move_left()<cr>", { desc = "Go to Left Window", remap = true })
