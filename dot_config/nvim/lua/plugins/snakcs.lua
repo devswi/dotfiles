@@ -49,11 +49,11 @@ return {
           -- { section = "terminal", cmd = "curl -s 'wttr.in/?0'" },
           {
             section = "keys",
-            padding = 2,
+            padding = 1,
             indent = 2,
           },
-          { icon = " ", title = "Projects", section = "projects", indent = 2, padding = 2 },
-          { section = "recent_files", icon = " ", title = "Recent Files", padding = 2, indent = 2 },
+          -- { icon = " ", title = "Projects", section = "projects", indent = 2, padding = 1 },
+          { section = "recent_files", icon = " ", title = "Recent Files", padding = 1, indent = 2 },
           function()
             local command = "git --no-pager diff --stat-width=98 --stat-count=8 -B -M -C"
             local status_len = vim.fn.system(command .. " | head -255 | wc -l")
@@ -65,7 +65,7 @@ return {
               section = "terminal",
               cmd = "echo ''; " .. command,
               enabled = in_git and has_status,
-              padding = 2,
+              padding = 1,
               indent = 1,
             }
           end,

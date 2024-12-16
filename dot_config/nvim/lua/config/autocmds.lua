@@ -5,7 +5,6 @@
 vim.api.nvim_create_autocmd("FileType", {
   pattern = { "snacks_dashboard", "nvcheatsheet", "neo-tree" },
   callback = function()
-    print("FileType " .. vim.bo.filetype)
     require("ufo").detach()
     vim.opt_local.foldenable = false
   end,
