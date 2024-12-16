@@ -28,24 +28,20 @@ require("lazy").setup({
     { import = "lazyvim.plugins.extras.lang.json" },
     { import = "lazyvim.plugins.extras.lang.markdown" },
     { import = "plugins.extras.lang.sql" },
-    -- { import = "plugins.extras.lang.harper" },
     { import = "plugins.extras.lang.cspell" },
     { import = "plugins.extras.lang.emmet" },
     -- coding
+    { import = "lazyvim.plugins.extras.coding.blink" },
     { import = "lazyvim.plugins.extras.coding.neogen" },
     { import = "plugins.extras.coding.codeium" },
     -- ui
     { import = "lazyvim.plugins.extras.ui.treesitter-context" },
-    { import = "lazyvim.plugins.extras.ui.mini-indentscope" },
     -- linting
     { import = "lazyvim.plugins.extras.linting.eslint" },
     -- editor
-    { import = "lazyvim.plugins.extras.editor.telescope" },
     { import = "lazyvim.plugins.extras.editor.navic" },
     { import = "lazyvim.plugins.extras.editor.aerial" },
     { import = "lazyvim.plugins.extras.editor.inc-rename" },
-    -- lsp
-    { import = "lazyvim.plugins.extras.lsp.neoconf" },
     -- dap
     { import = "lazyvim.plugins.extras.dap.core" },
     -- test

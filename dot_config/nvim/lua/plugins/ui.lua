@@ -28,6 +28,9 @@ return {
         lsp_doc_border = true,
         long_message_to_split = true,
       },
+      popupmenu = {
+        enabled = false,
+      },
     },
   },
   {
@@ -40,13 +43,9 @@ return {
       },
     },
   },
-  -- dashboard
-  {
-    "nvimdev/dashboard-nvim",
-    enabled = false,
-  },
   {
     "echasnovski/mini.starter",
+    enabled = false,
     event = "VimEnter",
     opts = function()
       local function greeting(name)
@@ -130,60 +129,8 @@ return {
       current_line_blame_opts = {
         delay = 0,
       },
-      current_line_blame_formatter = "<author> • <author_time> • <summary>",
+      current_line_blame_formatter = "  <author> • <author_time> • <summary>",
     },
-  },
-  {
-    "luukvbaal/statuscol.nvim",
-    branch = "0.10",
-    -- enabled = false,
-    config = function()
-      local builtin = require("statuscol.builtin")
-      require("statuscol").setup({
-        -- setopt = true,
-        relculright = true,
-        clickhandlers = {
-          Lnum = builtin.gitsigns_click,
-        },
-        ft_ignore = { "neo-tree" },
-        segments = {
-          {
-            sign = {
-              name = { ".*" },
-              namespace = { ".*" },
-              -- namespace = { ".*diagnostic.*" },
-              -- name = { "todo%-sign.*" }, -- WARN: escape the dash `-`
-              maxwidth = 1,
-              colwidth = 2,
-              auto = false,
-              wrap = true,
-            },
-          },
-          {
-            text = { builtin.lnumfunc, " " },
-            colwidth = 1,
-            click = "v:lua.ScLa",
-          },
-          {
-            sign = {
-              name = { "GitSigns*" },
-              namespace = { "gitsigns" },
-              colwidth = 1,
-              -- fillchar = git_sign_icon,
-              -- fillcharhl = "Nrline",
-            },
-            click = "v:lua.ScSa",
-          },
-          {
-            text = { builtin.foldfunc, " " },
-            hl = "StatusLine",
-            wrap = false,
-            colwidth = 1,
-            click = "v:lua.ScFa",
-          },
-        },
-      })
-    end,
   },
   {
     "akinsho/bufferline.nvim",
@@ -197,19 +144,6 @@ return {
             text = "File Explorer",
           },
         },
-      },
-    },
-  },
-  {
-    "echasnovski/mini.indentscope", -- https://github.com/echasnovski/mini.indentscope
-    lazy = true,
-    opts = {
-      -- symbol = "│",
-      symbol = "▏",
-      draw = {
-        animation = function()
-          return 0
-        end,
       },
     },
   },
@@ -291,15 +225,15 @@ return {
           section_separators = "",
           disabled_filetypes = {
             statusline = {
-              "ministarter",
               "lazy",
+              "snacks_dashboard",
               "alpha",
               "aerial",
               "Trouble",
               "Outline",
             },
             winbar = {
-              "ministarter",
+              "snacks_dashboard",
               "aerial",
               "Trouble",
               "neo-tree",

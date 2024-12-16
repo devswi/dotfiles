@@ -10,11 +10,6 @@ vim.g.root_spec = {
   "cwd",
 }
 
-vim.g.lazyvim_statuscolumn = {
-  folds_open = true, -- show fold sign when fold is open
-  folds_githl = false, -- highlight fold sign with git sign color
-}
-
 -- fix 'no information available' on hover if no result and empty markdowns
 vim.lsp.handlers["textDocument/hover"] = function(_, result, ctx, config)
   config = config
