@@ -31,7 +31,7 @@ require("lazy").setup({
     { import = "plugins.extras.lang.cspell" },
     { import = "plugins.extras.lang.emmet" },
     -- coding
-    { import = "lazyvim.plugins.extras.coding.blink" },
+    { import = "lazyvim.plugins.extras.coding.nvim-cmp" },
     { import = "lazyvim.plugins.extras.coding.neogen" },
     { import = "plugins.extras.coding.codeium" },
     -- ui
