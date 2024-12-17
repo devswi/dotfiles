@@ -1,6 +1,6 @@
 # Swi's dotfiles
 
-![starter](./images/starter.png)
+![starter](./images/dashboard.png)
 
 <details>
   <summary>More screenshots</summary>

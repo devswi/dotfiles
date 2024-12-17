@@ -17,8 +17,9 @@ return {
           -- When using a function, the `items` argument are the default keymaps.
           ---@type snacks.dashboard.Item[]
           keys = {
+            { icon = " ", key = "f", desc = "Find File", action = ":lua Snacks.dashboard.pick('files')" },
             { icon = " ", key = "n", desc = "New File", action = ":ene | startinsert" },
-            { icon = " ", key = "r", desc = "Recent Files", action = ":lua Snacks.dashboard.pick('oldfiles')" },
+            { icon = " ", key = "g", desc = "Find Text", action = ":lua Snacks.dashboard.pick('live_grep')" },
             {
               icon = " ",
               key = "c",
@@ -46,6 +47,16 @@ return {
         },
         sections = {
           { section = "header" },
+          {
+            section = "terminal",
+            cmd = "fortune -s | kittysay -c 10 4",
+            hl = "dir",
+            padding = 1,
+            indent = 8,
+            height = 30,
+            ttl = 0,
+            pane = 2,
+          },
           -- { section = "terminal", cmd = "curl -s 'wttr.in/?0'" },
           {
             section = "keys",
@@ -53,7 +64,13 @@ return {
             indent = 2,
           },
           -- { icon = " ", title = "Projects", section = "projects", indent = 2, padding = 1 },
-          { section = "recent_files", icon = " ", title = "Recent Files", padding = 1, indent = 2 },
+          {
+            section = "recent_files",
+            icon = " ",
+            title = "Recent Files",
+            padding = 1,
+            indent = 2,
+          },
           function()
             local command = "git --no-pager diff --stat-width=98 --stat-count=8 -B -M -C"
             local status_len = vim.fn.system(command .. " | head -255 | wc -l")
@@ -70,7 +87,6 @@ return {
             }
           end,
           -- { section = "terminal", cmd = "printf 'Cease to struggle and you cease to live.'" },
-          -- { section = "keys", gap = 0, padding = 1 },
           { section = "startup" },
         },
       },
@@ -84,8 +100,8 @@ return {
       statuscolumn = {
         enabled = true,
         folds = {
-          open = true,
-          git_hl = true,
+          open = false,
+          git_hl = false,
         },
       },
       words = { enabled = true },
