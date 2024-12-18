@@ -74,15 +74,16 @@ return {
           function()
             local command = "git --no-pager diff --stat-width=98 --stat-count=8 -B -M -C"
             local status_len = vim.fn.system(command .. " | head -255 | wc -l")
-            local has_status = tonumber(status_len) > 0
-            local in_git = Snacks.git.get_root() ~= nil
             return {
               icon = " ",
               title = "Git Status",
               section = "terminal",
-              cmd = "echo ''; " .. command,
-              enabled = in_git and has_status,
               padding = 1,
+              enabled = function()
+                local in_git = Snacks.git.get_root() ~= nil
+                return in_git and tonumber(status_len) > 0
+              end,
+              cmd = "echo ''; " .. command,
               indent = 1,
             }
           end,
