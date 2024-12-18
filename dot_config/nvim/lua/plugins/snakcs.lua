@@ -92,7 +92,14 @@ return {
         },
       },
       indent = {
-        enabled = true,
+        enabled = false,
+        indent = {
+          char = "▏",
+        },
+        scope = {
+          char = "▏",
+          only_current = true,
+        },
       },
       input = { enabled = true },
       notifier = { enabled = true },

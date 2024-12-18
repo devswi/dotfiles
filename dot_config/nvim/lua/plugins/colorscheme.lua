@@ -34,6 +34,9 @@ return {
         },
         blink_cmp = true,
         snacks = true,
+        indent_blankline = {
+          enabled = true,
+        },
         fzf = true,
         navic = { enabled = true, custom_bg = "NONE" },
         neotest = true,

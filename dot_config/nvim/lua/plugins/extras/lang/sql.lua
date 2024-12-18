@@ -9,7 +9,7 @@ return {
   },
   {
     "nvim-treesitter/nvim-treesitter",
-    opts = { ensure_installed = { "sql" } },
+    opts = { ensure_installed = { "sql", "scss" } },
   },
   {
     "mfussenegger/nvim-lint",

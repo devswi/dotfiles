@@ -35,6 +35,7 @@ require("lazy").setup({
     { import = "lazyvim.plugins.extras.coding.neogen" },
     { import = "plugins.extras.coding.codeium" },
     -- ui
+    { import = "lazyvim.plugins.extras.ui.indent-blankline" },
     { import = "lazyvim.plugins.extras.ui.treesitter-context" },
     -- linting
     { import = "lazyvim.plugins.extras.linting.eslint" },
