@@ -60,6 +60,13 @@ return {
         char = "▏",
         tab_char = "▏",
       },
+      exclude = {
+        filetypes = {
+          "help",
+          "alpha",
+          "neo-tree",
+        },
+      },
     },
   },
   {
