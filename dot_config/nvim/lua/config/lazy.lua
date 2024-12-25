@@ -28,7 +28,7 @@ require("lazy").setup({
     { import = "lazyvim.plugins.extras.lang.json" },
     { import = "lazyvim.plugins.extras.lang.markdown" },
     -- coding
-    { import = "lazyvim.plugins.extras.coding.nvim-cmp" },
+    -- { import = "lazyvim.plugins.extras.coding.nvim-cmp" },
     { import = "lazyvim.plugins.extras.coding.neogen" },
     { import = "lazyvim.plugins.extras.coding.luasnip" },
     -- ui

@@ -4,6 +4,7 @@ return {
   { import = "plugins.extras.linting.nvim-lint" },
   {
     "hrsh7th/nvim-cmp",
+    enabled = false,
     opts = function(_, opts)
       opts.window = {
         completion = {
@@ -40,6 +41,7 @@ return {
   {
     "hrsh7th/cmp-cmdline",
     lazy = true,
+    enabled = false,
     event = { "CmdlineEnter" },
     dependencies = {
       "hrsh7th/nvim-cmp",
