@@ -3,7 +3,7 @@ return {
     "mason.nvim",
     opts = {
       ensure_installed = {
-        "harper-ls",
+        "astro-language-server",
       },
     },
   },
