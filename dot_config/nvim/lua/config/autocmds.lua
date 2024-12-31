@@ -22,3 +22,13 @@ vim.api.nvim_create_autocmd("ModeChanged", {
     end
   end,
 })
+
+-- Disable built-in spellchecking for Markdown
+vim.api.nvim_del_augroup_by_name("lazyvim_wrap_spell")
+vim.api.nvim_create_autocmd("FileType", {
+  group = vim.api.nvim_create_augroup("lazyvim_user_markdown", { clear = true }),
+  pattern = { "text", "plaintex", "typst", "gitcommit", "markdown" },
+  callback = function()
+    vim.opt_local.wrap = true
+  end,
+})

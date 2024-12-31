@@ -30,6 +30,7 @@ require("lazy").setup({
     { import = "plugins.extras.lang.sql" },
     { import = "plugins.extras.lang.cspell" },
     { import = "plugins.extras.lang.emmet" },
+    { import = "plugins.extras.lang.astro" },
     -- coding
     { import = "lazyvim.plugins.extras.coding.nvim-cmp" },
     { import = "lazyvim.plugins.extras.coding.neogen" },

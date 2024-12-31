@@ -11,6 +11,8 @@ return {
         "goimports",
         "gofumpt",
       },
+      markdown = { "prettier", "autocorrect", "markdownlint-cli2", "markdown-toc" },
+      ["markdown.mdx"] = { "prettier", "autocorrect", "markdownlint-cli2", "markdown-toc" },
     },
     lang_to_ext = {
       vue = "vue",
