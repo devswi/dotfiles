@@ -1,6 +1,7 @@
 {
   "extras": [
     "lazyvim.plugins.extras.coding.nvim-cmp",
+    "lazyvim.plugins.extras.lang.nix",
     "lazyvim.plugins.extras.lang.toml"
   ],
   "news": {
