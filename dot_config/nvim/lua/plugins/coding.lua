@@ -1,7 +1,6 @@
 return {
   { import = "plugins.extras.coding.autopairs" },
   { import = "plugins.extras.coding.comment" },
-  { import = "lazyvim.plugins.extras.coding.luasnip" },
   { import = "plugins.extras.linting.nvim-lint" },
   {
     "hrsh7th/nvim-cmp",

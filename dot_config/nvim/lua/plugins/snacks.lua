@@ -113,8 +113,12 @@ return {
         },
       },
       words = { enabled = true },
+      image = {},
       zen = {
         enabled = false,
+      },
+      picker = {
+        ui_select = true,
       },
     },
   },

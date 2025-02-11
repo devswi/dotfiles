@@ -27,14 +27,10 @@ require("lazy").setup({
     { import = "lazyvim.plugins.extras.lang.prisma" },
     { import = "lazyvim.plugins.extras.lang.json" },
     { import = "lazyvim.plugins.extras.lang.markdown" },
-    { import = "plugins.extras.lang.sql" },
-    { import = "plugins.extras.lang.cspell" },
-    { import = "plugins.extras.lang.emmet" },
-    { import = "plugins.extras.lang.astro" },
     -- coding
     { import = "lazyvim.plugins.extras.coding.nvim-cmp" },
     { import = "lazyvim.plugins.extras.coding.neogen" },
-    { import = "plugins.extras.coding.codeium" },
+    { import = "lazyvim.plugins.extras.coding.luasnip" },
     -- ui
     { import = "lazyvim.plugins.extras.ui.indent-blankline" },
     { import = "lazyvim.plugins.extras.ui.treesitter-context" },
@@ -50,9 +46,19 @@ require("lazy").setup({
     { import = "lazyvim.plugins.extras.test.core" },
     -- formatting
     { import = "lazyvim.plugins.extras.formatting.prettier" },
-    { import = "plugins.extras.format.conform" },
     -- utils
     { import = "lazyvim.plugins.extras.util.dot" },
+
+    -- lang
+    { import = "plugins.extras.lang.sql" },
+    { import = "plugins.extras.lang.cspell" },
+    { import = "plugins.extras.lang.emmet" },
+    { import = "plugins.extras.lang.astro" },
+    -- coding
+    { import = "plugins.extras.coding.codeium" },
+    -- formatting
+    { import = "plugins.extras.format.conform" },
+
     -- import/override with your plugins
     { import = "plugins" },
   },
