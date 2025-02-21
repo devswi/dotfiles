@@ -113,7 +113,11 @@ return {
         },
       },
       words = { enabled = true },
-      image = {},
+      image = {
+        doc = {
+          enabled = false,
+        },
+      },
       zen = {
         enabled = false,
       },
