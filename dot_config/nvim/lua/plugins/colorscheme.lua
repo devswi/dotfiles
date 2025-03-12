@@ -22,7 +22,9 @@ return {
         lsp_trouble = true,
         mason = true,
         markdown = true,
-        mini = true,
+        mini = {
+          enabled = true,
+        },
         native_lsp = {
           enabled = true,
           underlines = {
@@ -32,9 +34,9 @@ return {
             information = { "undercurl" },
           },
         },
+        render_markdown = true,
         blink_cmp = true,
-        snacks = true,
-        indent_blankline = {
+        snacks = {
           enabled = true,
         },
         fzf = true,

@@ -1,3 +1,7 @@
+function greet(name)
+  print("Hello, " .. name .. "!")
+end
+
 return {
   {
     "folke/noice.nvim",
@@ -45,8 +49,9 @@ return {
   },
   {
     "lewis6991/gitsigns.nvim",
+    enabled = false,
     opts = {
-      current_line_blame = true,
+      current_line_blame = false,
       current_line_blame_opts = {
         delay = 0,
       },
@@ -162,6 +167,7 @@ return {
           section_separators = "",
           disabled_filetypes = {
             statusline = {
+              "codecompanion",
               "lazy",
               "snacks_dashboard",
               "alpha",
@@ -170,6 +176,10 @@ return {
               "Outline",
             },
             winbar = {
+              "Avante",
+              "AvanteSelectedFiles",
+              "AvanteInput",
+              "codecompanion",
               "snacks_dashboard",
               "aerial",
               "Trouble",

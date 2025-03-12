@@ -35,4 +35,26 @@ return {
     },
     opts = {},
   },
+  {
+    "OXY2DEV/markview.nvim",
+    lazy = false,
+    ft = { "markdown", "codecompanion", "Avante", "norg", "rmd", "org" },
+    opts = {
+      preview = {
+        filetypes = { "markdown", "codecompanion", "norg", "rmd", "org", "Avante" },
+        ignore_buftypes = {},
+        modes = { "c", "n", "no", "i", "v" },
+        hybrid_modes = { "i", "v" },
+      },
+      max_length = 99999,
+    },
+  },
+  {
+    "MeanderingProgrammer/render-markdown.nvim",
+    enabled = false,
+    ft = { "markdown", "codecompanion", "Avante", "norg", "rmd", "org" },
+    opts = {
+      file_types = { "markdown", "codecompanion", "norg", "rmd", "org", "Avante" },
+    },
+  },
 }

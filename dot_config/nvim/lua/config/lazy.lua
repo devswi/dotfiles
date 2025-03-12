@@ -54,8 +54,6 @@ require("lazy").setup({
     { import = "plugins.extras.lang.cspell" },
     { import = "plugins.extras.lang.emmet" },
     { import = "plugins.extras.lang.astro" },
-    -- coding
-    { import = "plugins.extras.coding.codeium" },
     -- formatting
     { import = "plugins.extras.format.conform" },
 

@@ -1,4 +1,5 @@
 return {
+  { import = "plugins.extras.coding.ai" },
   { import = "plugins.extras.coding.autopairs" },
   { import = "plugins.extras.coding.comment" },
   { import = "plugins.extras.linting.nvim-lint" },
