@@ -1,7 +1,3 @@
-function greet(name)
-  print("Hello, " .. name .. "!")
-end
-
 return {
   {
     "folke/noice.nvim",
@@ -45,17 +41,6 @@ return {
           winblend = 0,
         },
       },
-    },
-  },
-  {
-    "lewis6991/gitsigns.nvim",
-    enabled = false,
-    opts = {
-      current_line_blame = false,
-      current_line_blame_opts = {
-        delay = 0,
-      },
-      current_line_blame_formatter = "  <author> • <author_time> • <summary>",
     },
   },
   {

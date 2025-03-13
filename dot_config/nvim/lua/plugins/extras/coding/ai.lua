@@ -1,32 +1,66 @@
 return {
   {
-    "yetone/avante.nvim",
-    event = "VeryLazy",
-    version = false, -- Set this to "*" to always pull the latest release version, or set it to false to update to the latest code changes.
+    "olimorris/codecompanion.nvim",
+    config = true,
+    dependencies = {
+      "nvim-lua/plenary.nvim",
+      "nvim-treesitter/nvim-treesitter",
+    },
     opts = {
-      provider = "copilot",
-      --- @class AvanteFileSelectorConfig
-      file_selector = {
-        --- @alias FileSelectorProvider "native" | "fzf" | "mini.pick" | "snacks" | "telescope" | string
-        provider = "snacks",
-        -- Options override for custom providers
-        provider_opts = {},
+      display = {
+        chat = {
+          window = {
+            layout = "vertical", -- float|vertical|horizontal|buffer
+            position = nil, -- left|right|top|bottom (nil will default depending on vim.opt.plitright|vim.opt.splitbelow)
+            border = "single",
+            height = 0.8,
+            width = 0.4,
+            relative = "editor",
+            full_height = true, -- when set to false, vsplit will be used to open the chat buffer vs. botright/topleft vsplit
+            opts = {
+              breakindent = true,
+              cursorcolumn = false,
+              cursorline = false,
+              foldcolumn = "0",
+              linebreak = true,
+              list = false,
+              numberwidth = 1,
+              signcolumn = "no",
+              spell = false,
+              wrap = true,
+              number = false,
+              relativenumber = false,
+            },
+          },
+        },
+        diff = {
+          enabled = true,
+          close_chat_at = 240, -- Close an open chat buffer if the total columns of your display are less than...
+          layout = "vertical", -- vertical|horizontal split for default provider
+          opts = { "internal", "filler", "closeoff", "algorithm:patience", "followwrap", "linematch:120" },
+          provider = "mini_diff", -- default|mini_diff
+        },
       },
-      windows = {
-        sidebar_header = {
-          enabled = false, -- true, false to enable/disable the header
-          align = "center", -- left, center, right for title
-          rounded = true,
+      strategies = {
+        chat = {
+          adapter = "copilot",
+          roles = {
+            ---The header name for the LLM's messages
+            llm = function(adapter)
+              return "Code Assistant (" .. adapter.formatted_name .. ")"
+            end,
+            ---@type string
+            user = "devswi",
+          },
+        },
+        inline = {
+          adapter = "copilot",
         },
       },
     },
-    build = "make",
-    dependencies = {
-      "nvim-treesitter/nvim-treesitter",
-      "stevearc/dressing.nvim",
-      "nvim-lua/plenary.nvim",
-      "MunifTanjim/nui.nvim",
-    },
+    init = function()
+      require("plugins.codecompanion.fidget-spinner"):init()
+    end,
   },
   {
     "zbirenbaum/copilot.lua",

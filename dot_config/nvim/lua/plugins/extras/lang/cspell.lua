@@ -11,7 +11,15 @@ return {
     "nvim-lint",
     opts = {
       linters_by_ft = {
-        ["*"] = { "cspell" },
+        go = { "cspell" },
+        vue = { "cspell" },
+        lua = { "cspell" },
+        markdown = { "cspell" },
+        typescript = { "cspell" },
+        typescriptreact = { "cspell" },
+        javascript = { "cspell" },
+        javascriptreact = { "cspell" },
+        css = { "cspell" },
       },
     },
   },
