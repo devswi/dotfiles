@@ -10,12 +10,20 @@
     "build"
   ],
   "words": [
-    "devswi",
-    "cspell",
-    "nvim",
-    "neovim",
     "bson",
     "codeium",
+    "cspell",
+    "devswi",
+    "migrateup",
+    "neovim",
+    "nvim",
+    "rgba",
+    "shortid",
+    "uber",
     "yizhi"
-  ]
+  ],
+  "enabledFileTypes": {
+    "go.sum": false,
+    "go.mod": false
+  }
 }
