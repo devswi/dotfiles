@@ -78,6 +78,11 @@ compinit
 # End of Docker CLI completions
 
 # go bin
+ASDF_DIR="${ASDF_DIR:-${ASDF_DATA_DIR:-$HOME/.asdf}}"
+if [ -f "$ASDF_DIR/asdf.sh" ] || command -v asdf >/dev/null 2>&1; then
+  export GOPATH="$(asdf where golang)/packages"
+  export GOROOT="$(asdf where golang)/go"
+fi
 export PATH=$PATH:$(go env GOBIN)
 export PATH=$PATH:$(go env GOPATH)/bin
 
