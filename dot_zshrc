@@ -66,6 +66,93 @@ export FZF_DEFAULT_OPTS=" \
 --color=selected-bg:#494d64 \
 --multi"
 
+# Proxy helpers (HTTP/HTTPS + ALL/SOCKS)
+# Default proxy addresses; change if you use different host/port.
+PROXY_HTTP_URL="http://127.0.0.1:7897"
+PROXY_SOCKS_URL="socks5://127.0.0.1:7897"
+
+# Enable proxy (exports both lowercase and uppercase variants and a basic no_proxy)
+proxy_on() {
+  export http_proxy="$PROXY_HTTP_URL"
+  export https_proxy="$PROXY_HTTP_URL"
+  export all_proxy="$PROXY_SOCKS_URL"
+
+  # Uppercase variants for programs that look for them
+  export HTTP_PROXY="$http_proxy"
+  export HTTPS_PROXY="$https_proxy"
+  export ALL_PROXY="$all_proxy"
+
+  # Common local addresses to bypass the proxy
+  export no_proxy="localhost,127.0.0.1,::1"
+  echo "Proxy enabled: $http_proxy (HTTP/HTTPS), $all_proxy (ALL)"
+}
+
+# Disable proxy
+proxy_off() {
+  unset http_proxy https_proxy all_proxy HTTP_PROXY HTTPS_PROXY ALL_PROXY no_proxy
+  echo "Proxy disabled"
+}
+
+# Print proxy status
+proxy_status() {
+  printf "http_proxy=%s\nhttps_proxy=%s\nall_proxy=%s\n" "${http_proxy:-<unset>}" "${https_proxy:-<unset>}" "${all_proxy:-<unset>}"
+}
+
+# Toggle proxy (on if currently off, off if currently on)
+proxy_toggle() {
+  if [ -n "${http_proxy-}" ]; then
+    proxy_off
+  else
+    proxy_on
+  fi
+}
+
+# Convenience aliases
+alias proxy-enable='proxy_on'
+alias proxy-disable='proxy_off'
+alias proxy-toggle='proxy_toggle'
+
+# Auto-enable proxy on shell startup
+# Ways to enable by default:
+# 1) set environment variable PROXY_AUTO=1 (e.g. export PROXY_AUTO=1 in your environment)
+# 2) create a file $HOME/.proxy_on
+# 3) set PROXY_AUTO_HOSTS to a space-separated list of hostnames and if current hostname
+#    is in that list the proxy will be enabled automatically.
+# To avoid printing the enable message, set PROXY_AUTO_QUIET=1.
+PROXY_AUTO=${PROXY_AUTO:-0}
+PROXY_AUTO_HOSTS=${PROXY_AUTO_HOSTS:-}
+PROXY_AUTO_QUIET=${PROXY_AUTO_QUIET:-0}
+
+_should_auto_enable_proxy() {
+  # 1) env flag
+  if [ "$PROXY_AUTO" = "1" ]; then
+    return 0
+  fi
+
+  # 2) presence of toggle file
+  if [ -f "$HOME/.proxy_on" ]; then
+    return 0
+  fi
+
+  # 3) hostname match
+  if [ -n "$PROXY_AUTO_HOSTS" ]; then
+    # Surround with spaces to avoid partial matches
+    if [[ " $PROXY_AUTO_HOSTS " == *" $(hostname) "* ]]; then
+      return 0
+    fi
+  fi
+
+  return 1
+}
+
+if _should_auto_enable_proxy; then
+  if [ "$PROXY_AUTO_QUIET" = "1" ]; then
+    proxy_on >/dev/null 2>&1
+  else
+    proxy_on
+  fi
+fi
+export https_proxy=http://127.0.0.1:7897 http_proxy=http://127.0.0.1:7897 all_proxy=socks5://127.0.0.1:7897
 # asdf
 export PATH="${ASDF_DATA_DIR:-$HOME/.asdf}/shims:$PATH"
 
@@ -94,3 +181,7 @@ export PATH=$PATH:$(go env GOPATH)/bin
 # bun
 export BUN_INSTALL="$HOME/.bun"
 export PATH="$BUN_INSTALL/bin:$PATH"
+
+# 自动启用代理
+export PROXY_AUTO=1
+export PROXY_AUTO_QUIET=1
