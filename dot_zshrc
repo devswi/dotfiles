@@ -107,7 +107,23 @@ proxy_toggle() {
   fi
 }
 
+# Proxyman proxy (enable Proxyman at 127.0.0.1:9090)
+proxyman_on() {
+  export http_proxy="http://127.0.0.1:9090"
+  export https_proxy="http://127.0.0.1:9090"
+
+  # Uppercase variants for programs that look for them
+  export HTTP_PROXY="$http_proxy"
+  export HTTPS_PROXY="$https_proxy"
+
+  # Basic no_proxy
+  export no_proxy="localhost,127.0.0.1,::1"
+
+  echo "Proxyman proxy enabled: $http_proxy (HTTP/HTTPS)"
+}
+
 # Convenience aliases
+alias proxyman-enable='proxyman_on'
 alias proxy-enable='proxy_on'
 alias proxy-disable='proxy_off'
 alias proxy-toggle='proxy_toggle'
@@ -152,7 +168,7 @@ if _should_auto_enable_proxy; then
     proxy_on
   fi
 fi
-export https_proxy=http://127.0.0.1:7897 http_proxy=http://127.0.0.1:7897 all_proxy=socks5://127.0.0.1:7897
+
 # asdf
 export PATH="${ASDF_DATA_DIR:-$HOME/.asdf}/shims:$PATH"
 
@@ -179,3 +195,9 @@ export PATH="$BUN_INSTALL/bin:$PATH"
 # 自动启用代理
 export PROXY_AUTO=1
 export PROXY_AUTO_QUIET=1
+
+# Added by Antigravity
+export PATH="/Users/shiwei/.antigravity/antigravity/bin:$PATH"
+
+# OpenClaw Completion
+source <(openclaw completion --shell zsh)
